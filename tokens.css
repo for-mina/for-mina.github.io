@@ -1,0 +1,37 @@
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.9375rem; --text-md: 1.0625rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.25rem);
+  --text-head: clamp(2rem, 4.5vw + 1rem, 2.6rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --container: 1440px; --stage: 30rem; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* blush ground, plum ink, berry accent (all from the brief: pink, cute, for Mina) */
+  --color-paper: #FBE9EF; --color-paper-2: #FFF8FA; --color-paper-3: #F6D2DE;
+  --color-ink: #4A2433; --color-ink-2: #6B3A4E; --color-muted: #7E5466;
+  --color-rule: #EBC3D1;
+  --color-accent: #C8285E; --color-accent-ink: #FFF8FA; --color-accent-deep: #8E1A43; --color-accent-hover: #B3214F;
+  --color-focus: #5B2BB5;
+  --color-error: #B3261E; --color-success: #3F7A3A;
+  /* Nami in November: ginkgo gold, maple, metasequoia rust, her matcha, the river */
+  --color-gold: #F2B93B; --color-gold-deep: #B7811A; --color-gold-soft: #FCE9B5;
+  --color-maple: #E5744A; --color-rust: #B8562F;
+  --color-matcha: #A9C98B; --color-matcha-deep: #4F6B3A;
+  --color-river: #BFE1EA; --color-river-deep: #7DB7C8;
+  --color-land: #EADDB0; --color-land-2: #CFE0A8;
+  --color-skin: #F2B7C6;
+  --color-door: #E97FA0; --color-door-panel: #F19AB5; --color-door-edge: #C95A7E;
+  --color-mask-on: #FFFFFF; --color-mask-off: #000000;
+  --color-scrim: rgba(74, 36, 51, 0.45); --color-shadow: rgba(74, 36, 51, 0.16);
+
+  --font-display: "Bagel Fat One", "Gowun Dodum", system-ui, sans-serif;
+  --font-body: "Gowun Dodum", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Gaegu", "Gowun Dodum", cursive;
+  --font-mrz: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --radius-card: 22px; --radius-chip: 999px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
+  --tracking-display: -0.005em;
+}

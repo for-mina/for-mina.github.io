@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FBE9EF">
+<title>Mina, you have official mail</title>
+<meta name="description" content="Official mail from the Naminara consulate, delivered by a very serious ostrich.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mina, you have official mail">
+<meta property="og:description" content="Sealed last year, delivered today by a very serious ostrich.">
+<meta property="og:url" content="https://jcbkm4.github.io/official-mail/">
+<meta property="og:image" content="https://jcbkm4.github.io/official-mail/og-v1.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="s-ostrich" viewBox="0 0 120 150">
+      <path class="st-leg" d="M50 114 L46 141 H38 M68 114 L72 141 H80"/>
+      <circle class="f-ink2" cx="22" cy="92" r="11"/>
+      <circle class="f-ink2" cx="17" cy="104" r="9"/>
+      <ellipse class="f-ink" cx="56" cy="99" rx="36" ry="24"/>
+      <path class="f-ink2" d="M38 93 C50 80 74 82 80 96 C70 105 50 107 38 93Z"/>
+      <path class="st-neck" d="M80 88 C85 71 78 56 83 40"/>
+      <ellipse class="f-skin" cx="86" cy="33" rx="14" ry="12"/>
+      <path class="f-maple" d="M98 32 C105 32 111 34 111 36 C109 39 103 40 97 39Z"/>
+      <circle class="f-paper2" cx="89" cy="31" r="5.5"/>
+      <circle class="f-ink" cx="90.5" cy="32.2" r="2.6"/>
+      <path class="f-skin" d="M82.5 31 C84 25 94 25 95.5 30 L95.5 24 L82.5 24Z"/>
+      <path class="st-lid" d="M83 30 C86 28.5 92 28 96 29"/>
+      <path class="st-lid" d="M84 24.5 L93 26.5"/>
+      <path class="f-accent" d="M73 25 C73 12 97 10 99 23 Z"/>
+      <path class="f-ink" d="M86 23 C92 22 101 22 105 24 C101 26.5 92 26.5 86 25Z"/>
+      <circle class="f-gold" cx="85" cy="17.5" r="3.2"/>
+    </symbol>
+    <symbol id="s-approved" viewBox="0 0 120 120">
+      <circle class="st-stamp" cx="60" cy="60" r="54" stroke-width="5"/>
+      <circle class="st-stamp" cx="60" cy="60" r="44" stroke-width="2"/>
+      <text class="stamp-small" x="60" y="36" text-anchor="middle">Naminara</text>
+      <text class="stamp-text" x="60" y="68" text-anchor="middle">Approved</text>
+      <text class="stamp-small" x="60" y="90" text-anchor="middle">8 Nov 2026</text>
+    </symbol>
+    <symbol id="i-ferry" viewBox="0 0 48 48"><path class="st-river nf" d="M4 41 q5 -4 10 0 t10 0 t10 0 t10 0"/><path class="f-paper2 st-ink" d="M7 30 H41 L36 37 H12 Z"/><rect class="f-accent" x="15" y="20" width="18" height="10" rx="3"/><path class="st-ink nf" d="M24 20 V11 L31 14 L24 17"/></symbol>
+    <symbol id="i-tower" viewBox="0 0 48 48"><path class="st-ink nf" d="M16 45 L21 13 M28 45 L23 13 M18 31 H26"/><rect class="f-accent" x="13" y="7" width="18" height="7" rx="2.5"/><path class="st-ink st-dash nf" d="M30 11 L46 33"/></symbol>
+    <symbol id="i-pine" viewBox="0 0 48 48"><path class="f-pine" d="M24 3 L34 17 H29 L37 29 H31 L40 41 H8 L17 29 H11 L19 17 H14 Z"/><path class="st-ink nf" d="M24 41 V47"/></symbol>
+    <symbol id="i-ostrich" viewBox="0 0 48 48"><path class="st-neck-s" d="M20 45 C22 35 18 29 22 21"/><ellipse class="f-skin" cx="25" cy="16" rx="9" ry="8"/><path class="f-maple" d="M33 15 L42 17 L33 20Z"/><circle class="f-ink" cx="27.5" cy="15" r="2"/><path class="f-accent" d="M16 12 C17 4 32 4 33 11 Z"/></symbol>
+    <symbol id="i-tandem" viewBox="0 0 48 48"><circle class="st-ink nf" cx="9" cy="34" r="7"/><circle class="st-ink nf" cx="39" cy="34" r="7"/><path class="st-accent nf" d="M9 34 L17 22 H33 L39 34 M17 22 L24 34 L33 22 M24 34 H9"/><path class="st-ink nf" d="M13 18 H20 M27 18 H34 M33 22 L36 15 H41"/></symbol>
+    <symbol id="i-bike" viewBox="0 0 48 48"><circle class="st-ink nf" cx="12" cy="33" r="8"/><circle class="st-ink nf" cx="36" cy="33" r="8"/><path class="st-accent nf" d="M12 33 L20 20 H31 L36 33 M20 20 L25 33 L31 20"/><path class="st-ink nf" d="M16 16 H23 M31 20 L34 13 H39"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 48 48"><path class="st-muted nf" d="M17 15 q-3 -4 0 -8 M24 15 q-3 -4 0 -8 M31 15 q-3 -4 0 -8"/><path class="st-rust nf" d="M29 22 L44 9 M32 23 L46 12"/><path class="f-paper2 st-ink" d="M7 24 H41 C41 34 33 41 24 41 C15 41 7 34 7 24Z"/><path class="st-accent nf" d="M12 30 H36"/></symbol>
+    <symbol id="i-ginkgo" viewBox="0 0 48 48"><path class="f-gold" d="M24 30 C13 30 5 22 7 11 C13 7 19 9 24 16 C29 9 35 7 41 11 C43 22 35 30 24 30Z"/><path class="st-gold nf" d="M24 18 V44"/></symbol>
+    <symbol id="i-gtree" viewBox="0 0 48 48"><path class="f-gold" d="M24 5 C36 5 43 15 41 25 C39 35 31 37 24 37 C17 37 9 35 7 25 C5 15 12 5 24 5Z"/><path class="st-ink nf" d="M24 37 V47"/></symbol>
+    <symbol id="i-meta" viewBox="0 0 48 48"><path class="f-rust" d="M24 2 C30 15 34 30 33 40 H15 C14 30 18 15 24 2Z"/><path class="st-ink nf" d="M24 40 V47"/></symbol>
+    <symbol id="i-boat" viewBox="0 0 48 48"><path class="st-river nf" d="M4 43 q5 -4 10 0 t10 0 t10 0 t10 0"/><path class="f-maple st-ink" d="M6 30 H42 C40 36 34 39 24 39 C14 39 8 36 6 30Z"/><path class="st-ink nf" d="M12 20 L34 37"/><path class="f-ink" d="M8 17 L15 21 L13 24 L6 20Z"/></symbol>
+    <symbol id="i-reed" viewBox="0 0 48 48"><path class="st-gold nf" d="M14 47 C14 31 12 21 10 9 M24 47 C24 31 25 19 26 7 M34 47 C34 33 36 23 38 13"/><ellipse class="f-rust" cx="10" cy="11" rx="2.6" ry="6"/><ellipse class="f-rust" cx="26" cy="9" rx="2.6" ry="6"/><ellipse class="f-rust" cx="38" cy="15" rx="2.6" ry="6"/></symbol>
+    <symbol id="i-peacock" viewBox="0 0 48 48"><circle class="f-matcha" cx="24" cy="19" r="15"/><circle class="f-river-deep" cx="13" cy="17" r="3"/><circle class="f-river-deep" cx="24" cy="10" r="3"/><circle class="f-river-deep" cx="35" cy="17" r="3"/><circle class="f-river-deep" cx="18" cy="25" r="2.5"/><circle class="f-river-deep" cx="30" cy="25" r="2.5"/><path class="f-ink" d="M22 45 C20 35 21 27 24 23 C27 27 28 35 26 45Z"/><circle class="f-ink" cx="24" cy="21" r="3"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 48 48"><ellipse class="f-ink" cx="16" cy="13" rx="5" ry="8"/><circle class="f-ink" cx="16" cy="25" r="3.2"/><ellipse class="f-ink" cx="32" cy="25" rx="5" ry="8"/><circle class="f-ink" cx="32" cy="37" r="3.2"/></symbol>
+    <symbol id="i-train" viewBox="0 0 48 48"><rect class="f-accent" x="8" y="11" width="32" height="23" rx="6"/><rect class="f-paper2" x="12" y="15" width="10" height="8" rx="2"/><rect class="f-paper2" x="26" y="15" width="10" height="8" rx="2"/><circle class="f-ink" cx="16" cy="37" r="4"/><circle class="f-ink" cx="32" cy="37" r="4"/><path class="st-ink nf" d="M4 43 H44"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 48 48"><path class="f-gold" d="M24 4 C26 16 32 22 44 24 C32 26 26 32 24 44 C22 32 16 26 4 24 C16 22 22 16 24 4Z"/></symbol>
+    <symbol id="i-question" viewBox="0 0 48 48"><circle class="st-ink nf" cx="24" cy="24" r="17"/><path class="st-ink nf" d="M18.5 19 C19 13 29.5 12.5 29.5 19 C29.5 24 24 24 24 29"/><circle class="f-ink" cx="24" cy="35" r="2.2"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 48 48"><path class="st-muted nf" d="M18 13 q-2 -3 0 -6 M26 13 q-2 -3 0 -6"/><path class="f-cup st-ink" d="M10 18 H34 L31 40 C30.5 42 29 43 27 43 H17 C15 43 13.5 42 13 40Z"/><path class="st-ink nf" d="M33.5 22 C41 22 41 32 32 32"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar" data-topbar data-hidden>
+  <button class="back" type="button" data-back disabled>Back</button>
+  <div class="progress" aria-hidden="true"><i data-progress></i></div>
+</header>
+<div class="hud"><button class="sound" type="button" data-sound aria-pressed="true" aria-label="Sound effects">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path class="st-ink f-paper3" d="M4 9.5 H8 L13 5.5 V18.5 L8 14.5 H4 Z"/><path class="sound-waves st-ink nf" d="M16 9.5 C17.6 11 17.6 13 16 14.5 M18.5 7 C21.5 10 21.5 14 18.5 17"/><path class="sound-off st-ink nf" d="M16 9.5 L21 14.5 M21 9.5 L16 14.5"/></svg>
+</button></div>
+
+<main class="app">
+
+  <!-- 1. cover -->
+  <section class="scene is-active" data-scene="cover" aria-labelledby="h-cover">
+    <div class="cover-stage" data-cover-stage aria-hidden="true">
+      <svg class="env" data-env viewBox="0 0 300 200">
+        <rect class="env-back env-line f-door" x="6" y="6" width="288" height="188" rx="16"/>
+        <g class="env-letter">
+          <rect class="env-line f-paper2" x="24" y="16" width="252" height="150" rx="10"/>
+          <text class="env-letter-text" x="42" y="48">Visa enclosed.</text>
+          <text class="env-letter-text" x="42" y="72">One question attached.</text>
+        </g>
+        <path class="env-front env-line f-door-panel" d="M6 6 L150 116 L294 6 V178 Q294 194 278 194 H22 Q6 194 6 178 Z"/>
+        <path class="env-flap env-line f-door" d="M6 20 Q6 6 20 6 H280 Q294 6 294 20 L150 124 Z"/>
+        <g class="env-seal">
+          <circle class="f-accent env-line" cx="150" cy="120" r="25"/>
+          <use href="#i-ginkgo" x="134" y="103" width="32" height="32"/>
+        </g>
+        <text class="env-address-b" x="26" y="160">To: Mina</text>
+        <text class="env-address" x="26" y="183">Urgent since 2025</text>
+      </svg>
+      <div class="cover-ostrich" data-ostrich="cover"><svg class="ostrich" viewBox="0 0 120 150"><use href="#s-ostrich"/></svg></div>
+    </div>
+    <h1 id="h-cover">Mina, you have official mail.</h1>
+    <p class="lede">Sealed last year, delivered today by a very serious ostrich.</p>
+    <button class="btn btn-wide" type="button" data-open>Open the envelope</button>
+  </section>
+
+  <!-- 2. notice -->
+  <section class="scene" data-scene="notice" aria-labelledby="h-notice">
+    <article class="paper notice" data-paper>
+      <p class="small">Case NAMI-2025. Status: one question left.</p>
+      <h2 id="h-notice">Dear Mina, your visa is almost ready.</h2>
+      <p>Last year we said we’d go to Nami Island together. This Sunday, we finally do.</p>
+      <p class="hand">Only one small question stands between you and your visa.</p>
+      <svg class="signature" viewBox="0 0 220 64" aria-hidden="true">
+        <path class="sig-line" d="M8 42 C16 14 30 10 29 32 C28 50 14 50 20 38 C28 22 44 24 44 38 C44 48 52 48 56 36 C60 24 66 24 66 36 C66 46 74 46 78 34 L85 18 C87 36 90 46 96 40 C102 34 104 26 110 30 C116 34 112 44 120 42 C128 40 130 30 136 30 C142 30 140 42 148 40 C160 36 168 22 176 28 C184 34 176 46 190 44 C200 42 208 36 214 30"/>
+        <path class="sig-line" d="M22 56 C80 49 140 53 212 48"/>
+      </svg>
+      <p class="small sig-caption">The consulate</p>
+    </article>
+    <button class="btn btn-wide" type="button" data-go="ask">On to the question</button>
+  </section>
+
+  <!-- 3. the ask -->
+  <section class="scene" data-scene="ask" aria-labelledby="h-ask">
+    <div class="watcher" data-ostrich="ask" aria-hidden="true"><svg class="ostrich" viewBox="0 0 120 150"><use href="#s-ostrich"/></svg></div>
+    <h2 id="h-ask">Will you come to Nami Island with me on Sunday, 8&nbsp;November?</h2>
+    <div class="arena" data-arena>
+      <button class="btn btn-yes" type="button" data-yes>Yes, finally</button>
+      <button class="btn btn-quiet btn-no" type="button" data-no>No</button>
+    </div>
+    <p class="caption" data-caption aria-hidden="true">Choose carefully. The officer is watching.</p>
+    <p class="visually-hidden" data-caption-live aria-live="polite"></p>
+  </section>
+
+  <!-- 4. times -->
+  <section class="scene" data-scene="form" aria-labelledby="h-form">
+    <header class="scene-head">
+      <h2 id="h-form">A few details for your visa.</h2>
+      <p class="lede">So the driver (also me) knows when to come.</p>
+    </header>
+    <form class="visa-form" data-form novalidate>
+      <fieldset class="field">
+        <legend><span class="legend-row"><svg class="clock" data-clock="pickup" viewBox="0 0 48 48" aria-hidden="true"><circle class="clock-face" cx="24" cy="24" r="20"/><path class="clock-ticks" d="M24 7 V10 M41 24 H38 M24 41 V38 M7 24 H10"/><line class="clock-h" x1="24" y1="24" x2="24" y2="14"/><line class="clock-m" x1="24" y1="24" x2="24" y2="9"/><circle class="f-accent" cx="24" cy="24" r="2.6"/></svg>Pickup time in Seoul</span></legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="pickup" value="09:00" data-hint="We’d be on the island around half past ten."><span>09:00</span></label>
+          <label class="chip"><input type="radio" name="pickup" value="09:30" data-hint="On the island around eleven."><span>09:30</span></label>
+          <label class="chip"><input type="radio" name="pickup" value="10:00" data-hint="On the island around half past eleven, just in time for lunch."><span>10:00</span></label>
+          <label class="chip"><input type="radio" name="pickup" value="10:30" data-hint="We land around noon and start with lunch."><span>10:30</span></label>
+          <label class="chip"><input type="radio" name="pickup" value="11:00" data-hint="A slow morning. Lunch as soon as we land."><span>11:00</span></label>
+        </div>
+        <p class="hint" data-hint-for="pickup" data-default="Seoul to the ferry takes about an hour and a half on a Sunday.">Seoul to the ferry takes about an hour and a half on a Sunday.</p>
+        <p class="error" role="alert" data-error-for="pickup" hidden>Pick a time so I know when to come.</p>
+      </fieldset>
+      <fieldset class="field">
+        <legend><span class="legend-row"><svg class="clock" data-clock="home" viewBox="0 0 48 48" aria-hidden="true"><circle class="clock-face" cx="24" cy="24" r="20"/><path class="clock-ticks" d="M24 7 V10 M41 24 H38 M24 41 V38 M7 24 H10"/><line class="clock-h" x1="24" y1="24" x2="24" y2="14"/><line class="clock-m" x1="24" y1="24" x2="24" y2="9"/><circle class="f-accent" cx="24" cy="24" r="2.6"/></svg>Home by</span></legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="home" value="20:00" data-hint="Sunset at the cafe, then straight home."><span>20:00</span></label>
+          <label class="chip"><input type="radio" name="home" value="21:00" data-hint="Sunset, a slow dinner, and calmer roads."><span>21:00</span></label>
+          <label class="chip"><input type="radio" name="home" value="22:00" data-hint="No hurry at all. The roads are quiet by then."><span>22:00</span></label>
+          <label class="chip"><input type="radio" name="home" value="23:00" data-hint="The cafe is open until midnight."><span>23:00</span></label>
+          <label class="chip"><input type="radio" name="home" value="No rush" data-hint="We’ll see how the day goes."><span>No rush</span></label>
+        </div>
+        <p class="hint" data-hint-for="home" data-default="We can always head back earlier.">We can always head back earlier.</p>
+        <p class="error" role="alert" data-error-for="home" hidden>Pick a time so I know when to get you home.</p>
+      </fieldset>
+      <fieldset class="field">
+        <legend>Purpose of visit</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="purpose" value="Keeping last year’s promise" checked disabled><span>Keeping last year’s promise</span></label>
+          <label class="chip"><input type="checkbox" name="purpose" value="Autumn leaves"><span>Autumn leaves</span></label>
+          <label class="chip"><input type="checkbox" name="purpose" value="Matcha latte"><span>Matcha latte</span></label>
+          <label class="chip"><input type="checkbox" name="purpose" value="Eating everything"><span>Eating everything</span></label>
+          <label class="chip"><input type="checkbox" name="purpose" value="Too many photos"><span>Too many photos</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-wide" type="submit">Send for stamping</button>
+    </form>
+  </section>
+
+  <!-- 5. map -->
+  <section class="scene" data-scene="map" aria-labelledby="h-map">
+    <header class="scene-head">
+      <h2 id="h-map">Welcome to Naminara.</h2>
+      <p class="lede">Tap a sticker to see what we’ll do there.</p>
+    </header>
+    <div class="map" role="group" aria-label="Map of Nami Island">
+      <svg class="map-art" data-map viewBox="0 0 360 680" role="img" aria-label="Drawn map of Nami Island and the Gapyeong wharf">
+        <defs>
+          <mask id="mk-route" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="680"><path class="mask-line" data-mask-line d="M104 96 C114 120 132 142 156 166"/></mask>
+          <mask id="mk-zip" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="680"><path class="mask-line" data-mask-line d="M290 18 L232 178"/></mask>
+          <mask id="mk-flood" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="680"><rect class="mask-off" width="360" height="680"/><circle class="mask-on" data-flood cx="168" cy="166" r="720"/></mask>
+        </defs>
+        <rect class="f-river" width="360" height="680"/>
+        <g data-m="ripples"><path class="st-paper nf" d="M24 150 q8 -5 16 0 t16 0"/><path class="st-paper nf" d="M300 120 q8 -5 16 0 t16 0"/><path class="st-paper nf" d="M26 330 q8 -5 16 0 t16 0"/><path class="st-paper nf" d="M316 300 q8 -5 16 0 t16 0"/><path class="st-paper nf" d="M22 560 q8 -5 16 0 t16 0"/><path class="st-paper nf" d="M310 620 q8 -5 16 0 t16 0"/></g>
+        <g data-m="main">
+          <path class="f-land2" d="M0 0 H360 V54 C312 70 262 60 212 72 C162 84 100 66 0 84 Z"/>
+          <path class="m-shore" data-m="shore" d="M0 84 C100 66 162 84 212 72 C262 60 312 70 360 54"/>
+          <text class="map-text" x="16" y="26">Gapyeong</text>
+          <g data-pop><rect class="f-paper2" x="48" y="38" width="34" height="20" rx="4"/><path class="f-accent" d="M45 39 L65 27 L85 39 Z"/></g>
+          <g data-pop><rect class="f-river-deep" x="14" y="58" width="12" height="7" rx="3"/></g>
+          <g data-pop><rect class="f-maple" x="29" y="60" width="12" height="7" rx="3"/></g>
+          <rect class="f-paper2" x="98" y="72" width="9" height="24" rx="3"/>
+        </g>
+        <g data-m="tower"><path class="st-ink nf" d="M282 52 L286 20 M296 52 L292 20 M283.5 38 H294.5"/><rect class="f-accent" x="279" y="14" width="20" height="8" rx="3"/></g>
+        <path class="st-ink st-dash nf" mask="url(#mk-zip)" data-m="cable" d="M290 18 L232 178"/>
+        <g data-m="rider" opacity="0"><circle class="f-accent" cx="0" cy="6" r="4"/><path class="st-ink nf" d="M0 0 V3"/></g>
+        <path class="st-accent st-dash nf" mask="url(#mk-route)" data-m="route" d="M104 96 C114 120 132 142 156 166"/>
+        <g data-m="ferry" transform="translate(118 122) rotate(28)">
+          <path class="f-paper2 st-ink" d="M-14 0 H14 L10 7 H-10 Z"/>
+          <rect class="f-accent" x="-7" y="-7" width="14" height="7" rx="2"/>
+        </g>
+        <g mask="url(#mk-flood)">
+          <path class="f-land" d="M168 158 C214 150 252 178 266 224 C284 282 304 342 300 414 C296 486 276 562 240 620 C220 652 176 664 150 638 C116 604 92 534 86 460 C80 388 90 314 106 256 C118 208 128 164 168 158 Z"/>
+          <path class="st-paper nf" stroke-width="5" data-m="path" d="M170 176 C176 238 186 300 190 364 C194 430 190 520 196 630"/>
+          <path class="st-paper nf" stroke-width="4" data-m="path" d="M190 476 C164 480 132 484 98 490"/>
+        </g>
+        <path class="m-coast" data-m="coast" d="M168 158 C214 150 252 178 266 224 C284 282 304 342 300 414 C296 486 276 562 240 620 C220 652 176 664 150 638 C116 604 92 534 86 460 C80 388 90 314 106 256 C118 208 128 164 168 158 Z"/>
+        <g data-m="trees">
+          <g data-pop><use href="#i-pine" x="148" y="186" width="18" height="18"/></g><g data-pop><use href="#i-pine" x="180" y="196" width="18" height="18"/></g>
+          <g data-pop><use href="#i-pine" x="152" y="212" width="18" height="18"/></g><g data-pop><use href="#i-pine" x="184" y="224" width="18" height="18"/></g>
+          <g data-pop><use href="#i-pine" x="156" y="240" width="18" height="18"/></g>
+          <g data-pop><rect class="f-paper2" x="104" y="282" width="26" height="16" rx="3"/><path class="f-maple" d="M101 283 L117 272 L133 283 Z"/></g>
+          <g data-pop><rect class="f-paper2" x="228" y="334" width="26" height="16" rx="3"/><path class="f-accent" d="M225 335 L241 324 L257 335 Z"/></g>
+          <g data-pop><rect class="f-paper2" x="128" y="386" width="40" height="22" rx="4"/><path class="f-accent" d="M124 387 L148 372 L172 387 Z"/></g>
+          <g data-pop><circle class="f-gold" cx="178" cy="406" r="6"/></g><g data-pop><circle class="f-gold" cx="202" cy="412" r="6"/></g><g data-pop><circle class="f-gold" cx="180" cy="426" r="6"/></g>
+          <g data-pop><circle class="f-gold" cx="204" cy="432" r="6"/></g><g data-pop><circle class="f-gold" cx="182" cy="446" r="6"/></g><g data-pop><circle class="f-gold" cx="206" cy="452" r="6"/></g>
+          <g data-pop><use href="#i-meta" x="164" y="458" width="14" height="18"/></g><g data-pop><use href="#i-meta" x="146" y="461" width="14" height="18"/></g><g data-pop><use href="#i-meta" x="128" y="464" width="14" height="18"/></g><g data-pop><use href="#i-meta" x="110" y="467" width="14" height="18"/></g>
+          <g data-pop><use href="#i-meta" x="166" y="484" width="14" height="18"/></g><g data-pop><use href="#i-meta" x="148" y="487" width="14" height="18"/></g><g data-pop><use href="#i-meta" x="130" y="490" width="14" height="18"/></g><g data-pop><use href="#i-meta" x="112" y="493" width="14" height="18"/></g>
+          <g data-pop><use href="#i-reed" x="262" y="500" width="20" height="20"/></g><g data-pop><use href="#i-reed" x="252" y="520" width="20" height="20"/></g><g data-pop><use href="#i-reed" x="266" y="540" width="20" height="20"/></g>
+          <g data-pop><use href="#i-boat" x="290" y="528" width="26" height="26"/></g>
+          <g data-pop><circle class="f-maple" cx="230" cy="250" r="8"/></g><g data-pop><circle class="f-matcha" cx="124" cy="330" r="9"/></g><g data-pop><circle class="f-maple" cx="250" cy="400" r="8"/></g>
+          <g data-pop><circle class="f-rust" cx="112" cy="420" r="7"/></g><g data-pop><circle class="f-matcha" cx="236" cy="470" r="9"/></g><g data-pop><circle class="f-gold" cx="128" cy="560" r="8"/></g>
+          <g data-pop><circle class="f-maple" cx="214" cy="580" r="8"/></g><g data-pop><circle class="f-matcha" cx="160" cy="612" r="7"/></g><g data-pop><circle class="f-gold" cx="262" cy="300" r="6"/></g>
+        </g>
+        <text class="map-text" data-m="label" x="20" y="250" transform="rotate(-90 20 250)">North Han River</text>
+      </svg>
+      <button class="sticker" type="button" data-spot="office" style="--x:34%;--y:18%;--r:-6deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ferry"/></svg></span><span class="sticker-label">Visa check</span></span></button>
+      <button class="sticker" type="button" data-spot="zip" style="--x:80%;--y:7%;--r:5deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tower"/></svg></span><span class="sticker-label">Zip-wire</span></span></button>
+      <button class="sticker" type="button" data-spot="pine" style="--x:60%;--y:31%;--r:4deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-pine"/></svg></span><span class="sticker-label">Pine lane</span></span></button>
+      <button class="sticker" type="button" data-spot="ostrich" style="--x:30%;--y:38.5%;--r:-5deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ostrich"/></svg></span><span class="sticker-label">The officer</span></span></button>
+      <button class="sticker" type="button" data-spot="bikes" style="--x:70%;--y:46%;--r:6deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tandem"/></svg></span><span class="sticker-label">Bikes</span></span></button>
+      <button class="sticker" type="button" data-spot="lunch" style="--x:38%;--y:54%;--r:-4deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="sticker-label">Lunch</span></span></button>
+      <button class="sticker" type="button" data-spot="ginkgo" style="--x:66%;--y:62%;--r:5deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ginkgo"/></svg></span><span class="sticker-label">Ginkgo lane</span></span></button>
+      <button class="sticker" type="button" data-spot="meta" style="--x:30%;--y:71%;--r:-6deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-meta"/></svg></span><span class="sticker-label">Metasequoia</span></span></button>
+      <button class="sticker" type="button" data-spot="reeds" style="--x:74%;--y:80%;--r:4deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-boat"/></svg></span><span class="sticker-label">Boats</span></span></button>
+      <button class="sticker" type="button" data-spot="peacocks" style="--x:46%;--y:89%;--r:-3deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-peacock"/></svg></span><span class="sticker-label">Peacocks</span></span></button>
+    </div>
+
+    <div class="spot-notes">
+      <article class="spot-note" data-info="office">
+        <div class="spot-media"><img loading="lazy" width="960" height="719" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Gapyeong-Nami_Island_Ferry.jpg/960px-Gapyeong-Nami_Island_Ferry.jpg" alt="The ferry that crosses from Gapyeong to Nami Island"></div>
+        <h3>Visa check, then the ferry</h3>
+        <p>Naminara checks your visa at its “immigration office”, which is the ticket office. Then five minutes on the ferry.</p>
+        <p class="small">Ferries run every 10 to 20 minutes.</p>
+        <p class="spot-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Gapyeong-Nami_Island_Ferry.jpg">Minseong Kim</a>, CC BY-SA 4.0</p>
+      </article>
+      <article class="spot-note" data-info="zip">
+        <div class="spot-media"><svg viewBox="0 0 320 200" aria-hidden="true"><rect class="f-paper3" width="320" height="200"/><rect class="f-river" y="120" width="320" height="80"/><path class="st-paper nf" d="M30 150 q10 -6 20 0 t20 0 M190 170 q10 -6 20 0 t20 0"/><g data-grow><use href="#i-tower" x="0" y="10" width="170" height="170"/></g><g data-grow><circle class="f-gold" cx="262" cy="46" r="18"/></g><g data-grow><use href="#i-ferry" x="196" y="128" width="64" height="64"/></g></svg></div>
+        <h3>The zip-wire tower</h3>
+        <p>An 80-metre tower and about a kilometre of cable over the river, landing right on the island. It opens at 09:00.</p>
+        <p class="small">Totally optional. Bravery not required.</p>
+      </article>
+      <article class="spot-note" data-info="pine">
+        <div class="spot-media"><svg viewBox="0 0 320 200" aria-hidden="true"><rect class="f-paper2" width="320" height="200"/><rect class="f-land2" y="150" width="320" height="50"/><path class="f-land" d="M130 200 L160 150 L190 200 Z"/><g data-grow><use href="#i-pine" x="10" y="30" width="120" height="130"/></g><g data-grow><use href="#i-pine" x="190" y="30" width="120" height="130"/></g><g data-grow><use href="#i-pine" x="96" y="80" width="62" height="74"/></g><g data-grow><use href="#i-pine" x="162" y="80" width="62" height="74"/></g></svg></div>
+        <h3>Pine tree lane</h3>
+        <p>The first lane after the ferry: tall pines and soft light. Probably the quietest walk of the day.</p>
+        <p class="small">Our first stop.</p>
+      </article>
+      <article class="spot-note" data-info="ostrich">
+        <div class="spot-media"><img loading="lazy" width="960" height="720" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/A_captive_common_ostrich_in_Namiseom.jpg/960px-A_captive_common_ostrich_in_Namiseom.jpg" alt="An ostrich on Nami Island"></div>
+        <h3>The officer’s house</h3>
+        <p>Home of the island’s famously grumpy ostrich, the officer who stamped your visa. Please be polite.</p>
+        <p class="small">No snacks. He’s on duty.</p>
+        <p class="spot-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:A_captive_common_ostrich_in_Namiseom.jpg">Drcbrothephotographer</a>, CC0</p>
+      </article>
+      <article class="spot-note" data-info="bikes">
+        <div class="spot-media"><svg viewBox="0 0 320 200" aria-hidden="true"><rect class="f-paper3" width="320" height="200"/><rect class="f-land" y="160" width="320" height="40"/><g data-grow><use href="#i-tandem" x="40" y="10" width="170" height="170"/></g><g data-grow><use href="#i-bike" x="200" y="70" width="100" height="100"/></g></svg></div>
+        <h3>Bike center</h3>
+        <p>Single bikes or a two-seater. Two singles cost the same as one two-seater, so it’s purely a question of teamwork.</p>
+        <p class="small">Walking is always allowed.</p>
+      </article>
+      <article class="spot-note" data-info="lunch">
+        <div class="spot-media"><svg viewBox="0 0 320 200" aria-hidden="true"><rect class="f-gold-soft" width="320" height="200"/><g data-grow><use href="#i-bowl" x="50" y="10" width="170" height="170"/></g><g data-grow><use class="cup-matcha" href="#i-cup" x="206" y="70" width="96" height="96"/></g></svg></div>
+        <h3>Lunch at Bobplex</h3>
+        <p>Six restaurants under one roof, including halal Asian food at Dongmun. There’s a prayer room in the same building.</p>
+        <p class="small">An early lunch beats the queue.</p>
+      </article>
+      <article class="spot-note" data-info="ginkgo">
+        <div class="spot-media"><svg viewBox="0 0 320 200" aria-hidden="true"><rect class="f-gold-soft" width="320" height="200"/><rect class="f-gold" y="160" width="320" height="40"/><g data-grow><use href="#i-gtree" x="0" y="20" width="110" height="140"/></g><g data-grow><use href="#i-gtree" x="210" y="20" width="110" height="140"/></g><g data-grow><use href="#i-gtree" x="100" y="70" width="56" height="90"/></g><g data-grow><use href="#i-gtree" x="164" y="70" width="56" height="90"/></g><g data-grow><use href="#i-ginkgo" x="60" y="150" width="34" height="34"/></g><g data-grow><use href="#i-ginkgo" x="150" y="160" width="28" height="28"/></g><g data-grow><use href="#i-ginkgo" x="240" y="152" width="32" height="32"/></g></svg></div>
+        <h3>Songpa ginkgo lane</h3>
+        <p>Every autumn, Seoul’s Songpa district sends its fallen ginkgo leaves here. If we’re lucky, it’s a yellow carpet.</p>
+        <p class="small">Lucky is not guaranteed.</p>
+      </article>
+      <article class="spot-note" data-info="meta">
+        <div class="spot-media"><svg viewBox="0 0 320 200" aria-hidden="true"><rect class="f-paper2" width="320" height="200"/><path class="f-land" d="M0 200 L140 120 H180 L320 200 Z"/><g data-grow><use href="#i-meta" x="0" y="0" width="90" height="190"/></g><g data-grow><use href="#i-meta" x="56" y="40" width="64" height="130"/></g><g data-grow><use href="#i-meta" x="102" y="70" width="40" height="80"/></g><g data-grow><use href="#i-meta" x="230" y="0" width="90" height="190"/></g><g data-grow><use href="#i-meta" x="200" y="40" width="64" height="130"/></g><g data-grow><use href="#i-meta" x="178" y="70" width="40" height="80"/></g></svg></div>
+        <h3>Metasequoia lane</h3>
+        <p>The island’s most famous lane: two rows of giant trees, rusty orange in November. Sonata Cafe by the lane makes hotteok.</p>
+        <p class="small">Hotteok: a hot sweet pancake. Mandatory.</p>
+      </article>
+      <article class="spot-note" data-info="reeds">
+        <div class="spot-media"><svg viewBox="0 0 320 200" aria-hidden="true"><rect class="f-river" width="320" height="200"/><path class="st-paper nf" d="M20 60 q10 -6 20 0 t20 0 M200 40 q10 -6 20 0 t20 0 M240 150 q10 -6 20 0 t20 0"/><g data-grow><use href="#i-boat" x="90" y="40" width="150" height="150"/></g><g data-grow><use href="#i-reed" x="0" y="80" width="90" height="120"/></g><g data-grow><use href="#i-reed" x="240" y="90" width="80" height="110"/></g></svg></div>
+        <h3>Reeds and rowing boats</h3>
+        <p>A quiet path through tall reeds on the east shore. The rowing boats run until 15 November, so we just make it.</p>
+        <p class="small">Boats until 17:00.</p>
+      </article>
+      <article class="spot-note" data-info="peacocks">
+        <div class="spot-media"><img loading="lazy" width="960" height="720" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Pavo_cristatus_cock_%28Namiseom%29.jpg/960px-Pavo_cristatus_cock_%28Namiseom%29.jpg" alt="A peacock on Nami Island"></div>
+        <h3>Peacocks and ducks</h3>
+        <p>They wander around like they own the place. Technically, they’re citizens.</p>
+        <p class="spot-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Pavo_cristatus_cock_(Namiseom).jpg">Drcbrothephotographer</a>, CC0</p>
+      </article>
+    </div>
+
+    <button class="btn btn-wide" type="button" data-go="cross">Plan our day</button>
+  </section>
+
+  <!-- 6. crossing -->
+  <section class="scene" data-scene="cross" aria-labelledby="h-cross">
+    <h2 id="h-cross">How do we get onto the island?</h2>
+    <fieldset class="cards">
+      <legend class="visually-hidden">Crossing</legend>
+      <label class="card"><input type="radio" name="cross" value="Ferry" data-say="Classic. The officer approves."><span class="card-art"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ferry"/></svg></span><span class="card-text"><span class="card-title">Ferry</span><span class="card-note">Five minutes on the river. The classic.</span></span></label>
+      <label class="card"><input type="radio" name="cross" value="Zip-wire" data-say="Brave! I'll hold your bag."><span class="card-art on-pink"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tower"/></svg></span><span class="card-text"><span class="card-title">Zip-wire</span><span class="card-note">Fly over the river from an 80 m tower. I’ll fly too, or cheer from the ferry.</span></span></label>
+      <label class="card"><input type="radio" name="cross" value="Decide there" data-say="Mysterious. I like it."><span class="card-art on-gold"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-question"/></svg></span><span class="card-text"><span class="card-title">Decide there</span><span class="card-note">We’ll see how brave we feel.</span></span></label>
+    </fieldset>
+    <p class="error" role="alert" data-error hidden>Pick one, even if it’s “decide there”.</p>
+    <button class="btn btn-wide" type="button" data-next="explore" data-require="cross">Next</button>
+  </section>
+
+  <!-- 7. exploring -->
+  <section class="scene" data-scene="explore" aria-labelledby="h-explore">
+    <h2 id="h-explore">How do we explore?</h2>
+    <fieldset class="cards">
+      <legend class="visually-hidden">Exploring</legend>
+      <label class="card"><input type="radio" name="explore" value="Walk and talk" data-say="Comfy shoes recommended."><span class="card-art on-green"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-walk"/></svg></span><span class="card-text"><span class="card-title">Walk and talk</span><span class="card-note">Slow, easy, lots of stops.</span></span></label>
+      <label class="card"><input type="radio" name="explore" value="Two-seater bike" data-say="Steering wars incoming."><span class="card-art on-pink"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tandem"/></svg></span><span class="card-text"><span class="card-title">Two-seater bike</span><span class="card-note">Teamwork. Steering is negotiable.</span></span></label>
+      <label class="card"><input type="radio" name="explore" value="Two single bikes" data-say="Race accepted. Prepare to lose."><span class="card-art"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-bike"/></svg></span><span class="card-text"><span class="card-title">Two single bikes</span><span class="card-note">A race. The loser buys hotteok.</span></span></label>
+      <label class="card"><input type="radio" name="explore" value="The little train" data-say="Choo choo. Very civilised."><span class="card-art on-gold"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-train"/></svg></span><span class="card-text"><span class="card-title">The little train</span><span class="card-note">Sit back and watch the trees.</span></span></label>
+      <label class="card"><input type="radio" name="explore" value="A bit of everything" data-say="The full tour. Excellent."><span class="card-art on-pink"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-spark"/></svg></span><span class="card-text"><span class="card-title">A bit of everything</span><span class="card-note">Walk, ride, walk again.</span></span></label>
+    </fieldset>
+    <p class="error" role="alert" data-error hidden>Pick one, even a bit of everything.</p>
+    <button class="btn btn-wide" type="button" data-next="extras" data-require="explore">Next</button>
+  </section>
+
+  <!-- 8. extras -->
+  <section class="scene" data-scene="extras" aria-labelledby="h-extras">
+    <header class="scene-head">
+      <h2 id="h-extras">Anything extra?</h2>
+      <p class="lede">Pick as many as you like, or none.</p>
+    </header>
+    <fieldset class="field">
+      <legend class="visually-hidden">Extras</legend>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="extras" value="Rowing boat" data-say="I'll row. Mostly."><span>Rowing boat</span></label>
+        <label class="chip"><input type="checkbox" name="extras" value="Hotteok hunt" data-say="Best hunt ever."><span>Hotteok hunt</span></label>
+        <label class="chip"><input type="checkbox" name="extras" value="A photo for the island’s autumn contest" data-say="We're winning this."><span>A photo for the island’s autumn contest</span></label>
+        <label class="chip"><input type="checkbox" name="extras" value="Say hi to the grumpy ostrich" data-say="He'll pretend not to care."><span>Say hi to the grumpy ostrich</span></label>
+        <label class="chip"><input type="checkbox" name="extras" value="Hanbok photos" data-say="Very elegant. Noted."><span>Hanbok photos</span></label>
+      </div>
+    </fieldset>
+    <button class="btn btn-wide" type="button" data-next="lunch">Next</button>
+  </section>
+
+  <!-- 9. lunch -->
+  <section class="scene" data-scene="lunch" aria-labelledby="h-lunch">
+    <h2 id="h-lunch">What’s for lunch?</h2>
+    <fieldset class="cards">
+      <legend class="visually-hidden">Lunch</legend>
+      <label class="card"><input type="radio" name="lunch" value="Korean home cooking" data-say="Stone-pot bulgogi. Strong choice."><span class="card-art on-gold"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="card-text"><span class="card-title">Korean home cooking</span><span class="card-note">Stone-pot bulgogi at Nammun.</span></span></label>
+      <label class="card"><input type="radio" name="lunch" value="Halal Asian at Dongmun" data-say="Nasi goreng it is."><span class="card-art on-green"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-bowl"/></svg></span><span class="card-text"><span class="card-title">Halal Asian</span><span class="card-note">Nasi goreng and noodles at Dongmun.</span></span></label>
+      <label class="card"><input type="radio" name="lunch" value="Wood-fired pizza" data-say="Wood-fired. Very fancy."><span class="card-art on-pink"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-spark"/></svg></span><span class="card-text"><span class="card-title">Wood-fired pizza</span><span class="card-note">Neapolitan pizza, straight from the oven.</span></span></label>
+      <label class="card"><input type="radio" name="lunch" value="Decide there" data-say="We'll follow our noses."><span class="card-art"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-question"/></svg></span><span class="card-text"><span class="card-title">Decide there</span><span class="card-note">Whatever smells best.</span></span></label>
+    </fieldset>
+    <p class="error" role="alert" data-error hidden>Pick one, even if it’s “decide there”.</p>
+    <button class="btn btn-wide" type="button" data-next="cafe" data-require="lunch">Next</button>
+  </section>
+
+  <!-- 10. cafe, then issue -->
+  <section class="scene" data-scene="cafe" aria-labelledby="h-cafe">
+    <header class="scene-head">
+      <h2 id="h-cafe">Cafe Daenerys on the way back. Your order?</h2>
+      <p class="lede">A big river-view cafe, just in time for sunset.</p>
+    </header>
+    <fieldset class="cards">
+      <legend class="visually-hidden">Cafe order</legend>
+      <label class="card"><input type="radio" name="cafe" value="Matcha latte" data-say="Obviously." checked><span class="card-art on-green"><svg viewBox="0 0 48 48" aria-hidden="true"><use class="cup-matcha" href="#i-cup"/></svg></span><span class="card-text"><span class="card-title">Matcha latte</span><span class="card-note">I already know. If they don’t have it, I’ll find you one on the way.</span></span></label>
+      <label class="card"><input type="radio" name="cafe" value="Salted milk tea" data-say="Ooh, the signature."><span class="card-art on-gold"><svg viewBox="0 0 48 48" aria-hidden="true"><use class="cup-milk" href="#i-cup"/></svg></span><span class="card-text"><span class="card-title">Salted milk tea</span><span class="card-note">Their signature.</span></span></label>
+      <label class="card"><input type="radio" name="cafe" value="Chestnut latte" data-say="Peak November."><span class="card-art on-pink"><svg viewBox="0 0 48 48" aria-hidden="true"><use class="cup-chestnut" href="#i-cup"/></svg></span><span class="card-text"><span class="card-title">Chestnut latte</span><span class="card-note">Very November.</span></span></label>
+      <label class="card"><input type="radio" name="cafe" value="Surprise me" data-say="Challenge accepted."><span class="card-art"><svg viewBox="0 0 48 48" aria-hidden="true"><use class="cup-surprise" href="#i-cup"/></svg></span><span class="card-text"><span class="card-title">Surprise me</span><span class="card-note">I pick, you judge.</span></span></label>
+    </fieldset>
+    <button class="btn btn-wide" type="button" data-issue>Issue my visa</button>
+    <p class="small issue-note">This sends your visa straight to the consulate (that’s me).</p>
+  </section>
+
+  <!-- 11. visa -->
+  <section class="scene" data-scene="visa" aria-labelledby="h-visa">
+    <header class="scene-head">
+      <h2 id="h-visa">Your visa is ready.</h2>
+      <p class="lede" data-visa-lede>The consulate already has a copy. Take a screenshot for Sunday.</p>
+    </header>
+    <article class="visa" data-visa aria-label="Mina’s Naminara visa">
+      <div class="visa-top">
+        <div>
+          <p class="visa-country">Naminara Republic</p>
+          <p class="small">Entry visa, valid for one Sunday</p>
+        </div>
+        <div class="visa-photo" aria-hidden="true"><svg viewBox="20 0 100 125"><use href="#s-ostrich"/></svg></div>
+      </div>
+      <dl class="visa-fields">
+        <div><dt>Name</dt><dd class="visa-name">Mina</dd></div>
+        <div><dt>Date of entry</dt><dd>Sunday, 8&nbsp;Nov 2026</dd></div>
+        <div><dt>Pickup in Seoul</dt><dd data-out="pickup">10:00</dd></div>
+        <div><dt>Home by</dt><dd data-out="home">No rush</dd></div>
+        <div><dt>Crossing</dt><dd data-out="cross">Decide there</dd></div>
+        <div><dt>Exploring</dt><dd data-out="explore">A bit of everything</dd></div>
+        <div><dt>Lunch</dt><dd data-out="lunch">Decide there</dd></div>
+        <div><dt>Cafe order</dt><dd data-out="cafe">Matcha latte</dd></div>
+        <div class="wide"><dt>Extras</dt><dd data-out="extras">Whatever we find</dd></div>
+      </dl>
+      <svg class="mrz" viewBox="0 0 300 36" aria-hidden="true"><text class="mrz-text" x="8" y="15">V&lt;NAMINARA&lt;&lt;MINA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text><text class="mrz-text" x="8" y="30">20261108&lt;PROMISE&lt;KEPT&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text></svg>
+      <svg class="visa-stamp" data-visa-stamp viewBox="0 0 120 120" aria-hidden="true"><use href="#s-approved"/></svg>
+      <p class="countdown" data-countdown>See you on Sunday.</p>
+      <p class="issued">Issued by the consulate. Finally.</p>
+    </article>
+    <p class="delivered" data-delivered hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="f-matcha" cx="12" cy="12" r="11"/><path class="st-paper nf" stroke-width="3" d="M7 12.5 L10.5 16 L17 9"/></svg>Delivered to the consulate.</p>
+    <div class="fallback" data-fallback hidden>
+      <p class="small">The consulate’s mailbox didn’t answer. One tap sends it on Telegram instead.</p>
+      <a class="btn btn-wide" data-tg-fallback href="https://t.me/jcbkm" target="_blank" rel="noopener">Send on Telegram</a>
+    </div>
+    <button class="btn btn-quiet btn-wide" type="button" data-change>Change an answer</button>
+    <details class="more">
+      <summary>Our day, hour by hour</summary>
+      <ol class="timeline" data-timeline>
+        <li><span class="t">10:00</span><span>Pickup in Seoul</span></li>
+        <li><span class="t">17:27</span><span>Sunset at Cafe Daenerys</span></li>
+      </ol>
+    </details>
+    <details class="more credits">
+      <summary>Photo credits</summary>
+      <div>
+        <p>Ferry: <a href="https://commons.wikimedia.org/wiki/File:Gapyeong-Nami_Island_Ferry.jpg">Minseong Kim</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+        <p>Ostrich and peacock: <a href="https://commons.wikimedia.org/wiki/File:A_captive_common_ostrich_in_Namiseom.jpg">Drcbrothephotographer</a>, CC0, via Wikimedia Commons.</p>
+        <p>Everything else was drawn for Mina.</p>
+      </div>
+    </details>
+  </section>
+
+</main>
+
+<div class="gate" data-gate role="dialog" aria-modal="true" aria-label="Naminara immigration" hidden>
+  <div class="door door-l"><span class="door-knob"></span></div>
+  <div class="door door-r"><span class="door-knob"></span></div>
+  <p class="gate-sign">Naminara immigration</p>
+  <div class="gate-front">
+    <div class="gate-desk">
+      <div class="gate-officer" data-ostrich="gate" aria-hidden="true"><svg class="ostrich" viewBox="0 0 120 150"><use href="#s-ostrich"/></svg></div>
+      <div class="gate-visa">
+        <svg class="stamp-tool" viewBox="0 0 60 80" aria-hidden="true"><circle class="f-gold" cx="30" cy="13" r="10"/><rect class="f-gold" x="26" y="20" width="8" height="24" rx="3"/><rect class="f-accent" x="8" y="42" width="44" height="22" rx="7"/><rect class="f-ink" x="11" y="62" width="38" height="7" rx="3"/></svg>
+        <p class="hand">Visa for Mina</p>
+        <p class="small" data-gate-status>One stamp missing</p>
+        <svg class="stamp-mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#s-approved"/></svg>
+      </div>
+    </div>
+    <button class="btn" type="button" data-stamp>Stamp my visa</button>
+  </div>
+</div>
+
+<div class="flight" data-flight hidden>
+  <svg class="flight-art" data-flight-art viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><mask id="mk-trail" maskUnits="userSpaceOnUse" x="-100" y="-200" width="600" height="1000"><path class="mask-line" data-trail-mask d="M180 560 C120 470 70 380 140 330 C220 275 270 370 205 395 C140 420 150 300 245 225 C300 180 330 90 440 -60"/></mask></defs>
+    <path class="trail" mask="url(#mk-trail)" d="M180 560 C120 470 70 380 140 330 C220 275 270 370 205 395 C140 420 150 300 245 225 C300 180 330 90 440 -60"/>
+    <path data-trail-path class="nf" d="M180 560 C120 470 70 380 140 330 C220 275 270 370 205 395 C140 420 150 300 245 225 C300 180 330 90 440 -60"/>
+    <g data-plane><path class="f-paper2 st-ink" d="M-18 -11 L20 0 L-18 11 L-9 0 Z"/><path class="st-ink nf" d="M-9 0 L20 0 M-9 0 L-13 9"/></g>
+  </svg>
+  <div class="flight-box" aria-live="polite">
+    <p class="flight-text" data-flight-text>Delivering your visa to the consulate…</p>
+    <svg class="flight-check" data-flight-check viewBox="0 0 64 64" aria-hidden="true"><circle class="fc-ring" cx="32" cy="32" r="28"/><path class="fc-tick" d="M19 33 L28 42 L46 23"/></svg>
+  </div>
+</div>
+
+<div class="bubble" data-bubble aria-live="polite" hidden><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ostrich"/></svg><p data-bubble-text></p></div>
+
+<dialog class="spot" data-card aria-label="About this place" tabindex="-1">
+  <div data-card-body></div>
+  <button class="btn btn-quiet btn-wide" type="button" data-card-close>Back to the map</button>
+</dialog>
+
+<canvas class="leaves" data-leaves aria-hidden="true"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomWiggle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomBounce.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
