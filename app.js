@@ -103,7 +103,14 @@
     return { unlock, fx, ctx: () => ctx };
   })();
   const sfx = (n) => { try { Sound.fx[n](); } catch (e) { /* ignore */ } };
-  window.NAMI = { sfx: (n) => sfx(n), ctx: () => { Sound.unlock(); return Sound.ctx(); }, soundOn: () => !!state.sound };
+  window.NAMI = {
+    sfx: (n) => sfx(n), ctx: () => { Sound.unlock(); return Sound.ctx(); }, soundOn: () => !!state.sound,
+    /* read-only view of her answers for the Sunday layer (sunday/sunday.js) */
+    get answers() { return Object.freeze({ pickup: state.pickup || '10:00', home: state.home || 'No rush', cafe: state.cafe || 'Matcha latte', issued: (state.issues || 0) > 0, said: !!state.said }); },
+    go: (name) => { if (scenes[name]) go(name, { instant: true }); },
+    burst: (x, y, n, spread) => burst(x, y, n, spread),
+    say: (text) => say(text)
+  };
   const buzz = (ms) => { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) { /* ignore */ } };
   ['pointerdown', 'touchend', 'keydown'].forEach((ev) => document.addEventListener(ev, Sound.unlock, { passive: true }));
   const soundBtn = $('[data-sound]');
@@ -374,6 +381,7 @@
     if (name === 'cafe') enterCafe(s);
     if (name === 'visa') enterVisa(s);
     if (name !== 'map') ferryLoop(false);
+    if (window.NAMI && window.NAMI.onScene) window.NAMI.onScene(name, s);
   }
 
   /* ======================================================================

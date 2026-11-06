@@ -50,7 +50,7 @@
   MOVIE.build = (svg, rawState, { only = null } = {}) => {
     const st = MOVIE.normalise(rawState);
     svg.innerHTML = window.KIT.defs();
-    const cues = [], chapters = [];
+    const cues = [], chapters = [], sfxTrack = [];
     const master = gsap.timeline({ paused: true });
     const items = only ? [{ name: only, chapter: only }] : MOVIE.plan(st);
     let t = 0, prev = null, n = 0;
@@ -62,11 +62,11 @@
       layer.dataset.scene = it.name;
       svg.append(layer);
       gsap.set(layer, { autoAlpha: 0 });
-      const local = [];
+      const local = [], localSfx = [];
       const ctx = {
         layer, st, W: 360, H: 640, kit: window.KIT, addMin,
         say: (text, at = 0, dur = 2.4) => local.push({ at, dur, text }),
-        sfx: (tl, name, at) => tl.call(() => sfx(name), null, at),
+        sfx: (tl, name, at) => { localSfx.push({ at, name }); return tl.call(() => sfx(name), null, at); },
         add: (str) => { layer.insertAdjacentHTML('beforeend', str); return layer.lastElementChild; }
       };
       let tl;
@@ -81,12 +81,13 @@
       D = Math.max(0.5, Math.min(D, tl.duration()));
       master.add(tl.tweenFromTo(0, D, { duration: D, ease: 'none' }), start);
       local.forEach((c) => cues.push({ start: start + c.at, end: Math.min(start + c.at + c.dur, start + D), text: c.text }));
+      localSfx.forEach((s) => { if (s.at <= D) sfxTrack.push({ t: +(start + s.at).toFixed(3), name: s.name }); });
       chapters.push({ start, name: it.chapter, n: chapters.length + 1, scene: it.name });
       t = start + D;
       prev = layer; n += 1;
     });
     if (prev) master.to({}, { duration: 0.6 }, t); // hold the last frame
-    return { master, cues, chapters, total: Math.max(t + 0.6, 0.1) };
+    return { master, cues, chapters, sfx: sfxTrack.sort((a, b) => a.t - b.t), total: Math.max(t + 0.6, 0.1) };
   };
 
   /* ---------- music: a small procedural music box loop ---------- */

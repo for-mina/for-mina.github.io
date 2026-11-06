@@ -19,8 +19,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap">
-<link rel="stylesheet" href="app.css?v=4">
-<link rel="stylesheet" href="movie/movie.css?v=4">
+<link rel="stylesheet" href="app.css?v=5">
+<link rel="stylesheet" href="movie/movie.css?v=5">
+<link rel="stylesheet" href="sunday/sunday.css?v=5">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -427,6 +428,7 @@
       <p class="countdown" data-countdown>See you on Sunday.</p>
       <p class="issued">Issued by the consulate. Finally.</p>
     </article>
+    <div class="sunday-visa" data-sunday-visa></div>
     <p class="delivered" data-delivered><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="f-matcha" cx="12" cy="12" r="11"/><path class="st-paper nf" stroke-width="3" d="M7 12.5 L10.5 16 L17 9"/></svg><span data-delivered-text>The consulate has a copy.</span></p>
     <button class="btn btn-wide" type="button" data-replay-movie>Watch our Sunday again</button>
     <button class="btn btn-quiet btn-wide" type="button" data-change>Change an answer</button>
@@ -507,6 +509,8 @@
   <button class="btn btn-quiet btn-wide" type="button" data-card-close>Back to the map</button>
 </dialog>
 
+<div class="pass" data-pass role="dialog" aria-modal="true" aria-labelledby="pass-title" hidden></div>
+
 <canvas class="leaves" data-leaves aria-hidden="true"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -516,12 +520,13 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomWiggle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomBounce.min.js"></script>
-<script src="movie/kit.js?v=4"></script>
-<script src="movie/engine.js?v=4"></script>
-<script src="movie/scenes-road.js?v=4"></script>
-<script src="movie/scenes-river.js?v=4"></script>
-<script src="movie/scenes-island.js?v=4"></script>
-<script src="movie/scenes-cafe.js?v=4"></script>
-<script src="app.js?v=4"></script>
+<script src="movie/kit.js?v=5"></script>
+<script src="movie/engine.js?v=5"></script>
+<script src="movie/scenes-road.js?v=5"></script>
+<script src="movie/scenes-river.js?v=5"></script>
+<script src="movie/scenes-island.js?v=5"></script>
+<script src="movie/scenes-cafe.js?v=5"></script>
+<script src="app.js?v=5"></script>
+<script src="sunday/sunday.js?v=5"></script>
 </body>
 </html>
