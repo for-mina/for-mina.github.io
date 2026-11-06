@@ -94,11 +94,16 @@
       sparkle: () => [1047, 1319, 1568, 2093].forEach((f, i) => tone(f, f * 1.01, 0.24, 'triangle', 0.07, i * 0.07)),
       paper: () => noise(0.2, 2600, 6000, 'highpass', 0.09),
       scribble: () => noise(1.1, 2400, 1100, 'bandpass', 0.05),
-      gulp: () => tone(300, 120, 0.12, 'sine', 0.12)
+      gulp: () => tone(300, 120, 0.12, 'sine', 0.12),
+      honk: () => { tone(440, 430, 0.13, 'square', 0.06); tone(554, 548, 0.13, 'square', 0.06, 0.17); },
+      splash: () => noise(0.4, 1600, 300, 'lowpass', 0.22),
+      chime: () => [1568, 2093].forEach((f, i) => tone(f, f, 0.3, 'triangle', 0.06, i * 0.09)),
+      click: () => tone(2200, 1900, 0.018, 'square', 0.02)
     };
-    return { unlock, fx };
+    return { unlock, fx, ctx: () => ctx };
   })();
   const sfx = (n) => { try { Sound.fx[n](); } catch (e) { /* ignore */ } };
+  window.NAMI = { sfx: (n) => sfx(n), ctx: () => { Sound.unlock(); return Sound.ctx(); }, soundOn: () => !!state.sound };
   const buzz = (ms) => { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) { /* ignore */ } };
   ['pointerdown', 'touchend', 'keydown'].forEach((ev) => document.addEventListener(ev, Sound.unlock, { passive: true }));
   const soundBtn = $('[data-sound]');
@@ -140,6 +145,7 @@
   }
   function flush() { Object.keys(state.outbox || {}).forEach((id) => deliver(id, state.outbox[id])); }
   window.addEventListener('online', flush);
+  setInterval(() => { if (Object.keys(state.outbox || {}).length && navigator.onLine !== false) flush(); }, 20000);
 
   /* ======================================================================
      The ostrich: built inline so each part can move
@@ -877,52 +883,88 @@
       '🎯 Purpose: ' + state.purpose.join(', ')
     ].join('\n');
   }
+  /* ---------- the terminal: her answers compiled into a film ---------- */
+  const term = $('[data-term]'), termBody = $('[data-term-body]'), termFoot = $('[data-term-foot]');
+  const esc = (v) => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const colorVal = (v) => esc(v).replace(/"([^"]*)"/g, '<span class="t-str">"$1"</span>');
+  function highlight(obj) {
+    return JSON.stringify(obj, null, 2).split('\n').map((line) => {
+      const m = line.match(/^(\s*)"([^"]+)":\s(.*)$/);
+      return m ? `${m[1]}<span class="t-key">"${esc(m[2])}"</span>: ${colorVal(m[3])}` : colorVal(line);
+    }).join('\n');
+  }
+  const DRINK = { 'Matcha latte': 'whisking the matcha latte', 'Salted milk tea': 'salting the milk tea', 'Chestnut latte': 'roasting the chestnuts', 'Surprise me': 'hiding a surprise drink' };
+  async function runTerminal(sending) {
+    const o = outValues();
+    const sp = A ? 1 : 0.1;
+    term.hidden = false; termFoot.hidden = true; termBody.textContent = '';
+    $('main').inert = true;
+    const add = (html) => { termBody.insertAdjacentHTML('beforeend', html); };
+    const type = async (text) => {
+      const span = document.createElement('span'); termBody.append(span);
+      for (let i = 1; i <= text.length; i += 1) { span.textContent = text.slice(0, i); if (i % 3 === 0) sfx('click'); await wait(26 * sp); }
+    };
+    const step = async (label, result, ms = 360) => {
+      const line = document.createElement('div');
+      line.innerHTML = '<span class="t-dim">› </span><span></span> <span class="t-dim"></span><span></span>';
+      const [, b, d, r] = line.children;
+      b.textContent = label; termBody.append(line);
+      const n = Math.max(3, 30 - label.length);
+      for (let i = 0; i < n; i += 1) { d.textContent += '.'; await wait((ms / n) * sp); }
+      const res = await result;
+      const rr = typeof res === 'string' ? { text: res, cls: 't-ok' } : res;
+      r.className = rr.cls; r.textContent = ' ' + rr.text; sfx(rr.cls === 't-ok' ? 'tick' : 'click');
+    };
+    add('<span class="t-p">consulate@naminara</span><span class="t-dim">:~$ </span>');
+    await type('./issue-visa --for mina');
+    add('\n'); await wait(300 * sp);
+    add('<span class="t-dim">› reading answers.json</span>\n'); await wait(260 * sp);
+    add(highlight({ pickup: o.pickup, home: o.home, crossing: o.cross, explore: o.explore, extras: state.extras || [], lunch: o.lunch, cafe: o.cafe }) + '\n');
+    await wait(520 * sp);
+    await step('sending visa to the consulate', sending.then((ok) => (ok ? { text: 'delivered', cls: 't-ok' } : { text: 'queued, retrying', cls: 't-str' })), 900);
+    await step('drawing the North Han River', 'ok');
+    await step('teaching the ostrich to salute', 'ok');
+    await step(state.cross === 'Zip-wire' ? 'tightening the zip-wire' : state.cross === 'Ferry' ? 'fuelling the ferry' : 'flipping a coin', state.cross === 'Decide there' ? { text: 'edge?!', cls: 't-str' } : 'ok');
+    await step(DRINK[o.cafe] || 'brewing coffee', 'ok');
+    const bar = document.createElement('div'); termBody.append(bar);
+    for (let i = 0; i <= 10; i += 1) {
+      bar.innerHTML = `<span class="t-dim">› </span>rendering sunday.mp4 <span class="t-key">[${'#'.repeat(i)}${'.'.repeat(10 - i)}]</span> ${i * 10}%`;
+      await wait(120 * sp);
+    }
+    add('\n<span class="t-ok">build succeeded in 3.4s, 0 templates used</span>\n');
+    sfx('sparkle');
+    termFoot.hidden = false;
+    if (A) gsap.from(termFoot.children, { y: 14, opacity: 0, stagger: 0.1, duration: 0.4, ease: 'back.out(2)', clearProps: 'all' });
+    $('[data-term-play]').focus({ preventScroll: true });
+    return new Promise((resolve) => {
+      const play = $('[data-term-play]'), skip = $('[data-term-skip]');
+      const done = (v) => { play.removeEventListener('click', onPlay); skip.removeEventListener('click', onSkip); term.hidden = true; $('main').inert = false; resolve(v); };
+      const onPlay = () => done('play');
+      const onSkip = () => done('skip');
+      play.addEventListener('click', onPlay); skip.addEventListener('click', onSkip);
+    });
+  }
+  function playMovie(onEnd) {
+    if (!window.MOVIE || !window.gsap || !window.KIT) { onEnd(); return; }
+    Sound.unlock();
+    MOVIE.play(state, { onEnd });
+  }
   $('[data-issue]').addEventListener('click', async (e) => {
     const btn = e.currentTarget;
     if (btn.disabled || busy) return;
     btn.disabled = true;
     Sound.unlock();
     state.issues = (state.issues || 0) + 1; save();
-    const sending = deliver('visa-' + state.issues, visaMessage(state.issues > 1));
-    const ok = await flight(sending);
-    state.delivered = ok; save();
-    btn.disabled = false;
-    go('visa', { sound: false });
-  });
-  function flight(sending) {
-    const fl = $('[data-flight]'), plane = $('[data-plane]', fl), path = $('[data-trail-path]', fl), mask = $('[data-trail-mask]', fl);
-    const text = $('[data-flight-text]', fl), check = $('[data-flight-check]', fl), tickEl = $('.fc-tick', check);
-    text.textContent = 'Delivering your visa to the consulate…';
-    fl.hidden = false;
-    $('main').inert = true;
-    if (!A) {
-      check.style.opacity = '0';
-      return sending.then((ok) => { text.textContent = ok ? 'Delivered to the consulate.' : 'Almost there.'; check.style.opacity = ok ? '1' : '0'; return wait(900).then(() => { fl.hidden = true; $('main').inert = false; return ok; }); });
-    }
-    sfx('whoosh');
-    gsap.set(check, { scale: 0, opacity: 0 });
-    gsap.set(mask, { drawSVG: 0 });
-    gsap.set(plane, { opacity: 0 });
-    const tl = gsap.timeline();
-    tl.fromTo(fl, { opacity: 0 }, { opacity: 1, duration: 0.25 })
-      .fromTo(text, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35 }, 0.1)
-      .set(plane, { opacity: 1 }, 0.2)
-      .to(plane, { motionPath: { path, align: path, alignOrigin: [0.5, 0.5], autoRotate: true }, duration: 2.1, ease: 'power1.inOut' }, 0.2)
-      .to(mask, { drawSVG: '100%', duration: 2.1, ease: 'power1.inOut' }, 0.2)
-      .add(() => sfx('whoosh'), 1.3);
-    const done = new Promise((r) => tl.eventCallback('onComplete', r));
-    return Promise.all([done, sending]).then(([, ok]) => {
-      text.textContent = ok ? 'Delivered to the consulate.' : 'Almost there.';
-      if (ok) {
-        sfx('sparkle'); buzz(25);
-        gsap.fromTo(check, { scale: 0, opacity: 0, rotation: -90 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: 'back.out(2.5)' });
-        gsap.fromTo(tickEl, { drawSVG: 0 }, { drawSVG: '100%', duration: 0.4, delay: 0.25 });
-      }
-      return wait(ok ? 1300 : 600)
-        .then(() => gsap.to(fl, { opacity: 0, duration: 0.3 }))
-        .then(() => { fl.hidden = true; $('main').inert = false; gsap.set([fl, plane], { clearProps: 'all' }); return ok; });
+    const sending = deliver('visa-' + state.issues, visaMessage(state.issues > 1)).then((ok) => {
+      if (ok) state.delivered = true; else if (state.delivered !== true) state.delivered = false;
+      save(); return ok;
     });
-  }
+    const choice = await runTerminal(sending);
+    btn.disabled = false;
+    if (choice === 'play') playMovie(() => go('visa', { sound: false }));
+    else go('visa', { sound: false });
+  });
+  $('[data-replay-movie]').addEventListener('click', () => playMovie(() => {}));
 
   /* ======================================================================
      11. The visa
@@ -954,11 +996,7 @@
       const li = document.createElement('li'), a = document.createElement('span'), b = document.createElement('span');
       a.className = 't'; a.textContent = t; b.textContent = txt; li.append(a, b); return li;
     }));
-    const ok = state.delivered === true;
-    $('[data-delivered]').hidden = !ok;
-    $('[data-fallback]').hidden = ok;
-    $('[data-visa-lede]').textContent = ok ? 'The consulate already has a copy. Take a screenshot for Sunday.' : 'Take a screenshot for Sunday, and send a copy to the consulate below.';
-    $('[data-tg-fallback]').href = 'https://t.me/' + TG_USER + '?text=' + encodeURIComponent(visaMessage(state.issues > 1));
+    $('[data-delivered-text]').textContent = state.delivered === true ? 'The consulate already has a copy.' : 'Sending a copy to the consulate…';
     countdown();
   }
   function countdown() {
@@ -985,9 +1023,40 @@
         burst(x, y, 34, 0.8);
         gsap.fromTo(v, { x: 0 }, { x: 7, duration: 0.45, ease: 'wiggle6' });
       }, 1.3)
-      .fromTo($$('[data-delivered], [data-fallback], [data-change]', s).filter((x) => !x.hidden), { opacity: 0, y: 12 }, { opacity: 1, y: 0, stagger: 0.1, duration: 0.4, clearProps: 'all' }, 1.5);
+      .fromTo($$('[data-delivered], [data-replay-movie], [data-change]', s), { opacity: 0, y: 12 }, { opacity: 1, y: 0, stagger: 0.1, duration: 0.4, clearProps: 'all' }, 1.5);
   }
   $('[data-change]').addEventListener('click', () => go('cross'));
+
+  /* ======================================================================
+     Developer console (tap the signature or the visa code five times)
+     ====================================================================== */
+  const devcon = $('[data-devcon]'), devBody = $('[data-devcon-body]');
+  function openDevcon() {
+    const o = outValues();
+    const log = ['a1f9e2c feat: ostrich learns to stamp visas', '7c3d0b1 fix: "No" now runs away from fingers', '4be8a90 feat: matcha latte preselected (obviously)', '3e07f6d feat: the island draws itself', 'b81c0de feat: our Sunday, the movie', '92d1c55 chore: book Sunday, 8 November', '1d0e7a2 init: an idea from last year'];
+    devBody.innerHTML = '<span class="t-p">$</span> git log --oneline\n' + log.map((l) => `<span class="t-key">${l.slice(0, 7)}</span>${esc(l.slice(7))}`).join('\n') +
+      '\n\n<span class="t-p">$</span> cat answers.json\n' + highlight({ pickup: o.pickup, home: o.home, crossing: o.cross, explore: o.explore, lunch: o.lunch, cafe: o.cafe }) +
+      '\n\n<span class="t-p">$</span> echo $MOOD\n<span class="t-ok">excited</span>\n\n<span class="t-dim">// you found the developer console. hi, Mina.</span>';
+    devcon.hidden = false; sfx('chime');
+    if (A) gsap.fromTo(devcon, { y: 320 }, { y: 0, duration: 0.45, ease: 'power3.out' });
+    $('[data-devcon-close]').focus({ preventScroll: true });
+  }
+  $('[data-devcon-close]').addEventListener('click', () => { devcon.hidden = true; });
+  let taps = 0, tapT = 0;
+  const secret = () => { const now = Date.now(); taps = now - tapT < 800 ? taps + 1 : 1; tapT = now; if (taps >= 5) { taps = 0; openDevcon(); } };
+  $$('.signature, .mrz').forEach((el) => el.addEventListener('click', secret));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '`') openDevcon();
+    if (e.key === 'Escape' && !devcon.hidden) devcon.hidden = true;
+  });
+  function bootLine() {
+    const el = $('[data-boot]');
+    if (!el) return;
+    const text = '› secure delivery for Mina, seal verified';
+    if (!A) { el.textContent = text; return; }
+    let i = 0;
+    const t = setInterval(() => { i += 1; el.textContent = text.slice(0, i); if (i >= text.length) clearInterval(t); }, 30);
+  }
 
   /* ======================================================================
      Start
@@ -1004,8 +1073,9 @@
     go(state.scene, { back: true, instant: true });
     trail.splice(0, trail.length, ...ORDER.slice(0, idx));
     backBtn.disabled = false;
-  } else if (A) {
-    introCover();
+  } else {
+    if (A) introCover();
+    setTimeout(bootLine, A ? 1700 : 0);
   }
 
   try {

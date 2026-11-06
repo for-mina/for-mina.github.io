@@ -27,6 +27,18 @@
   --color-mask-on: #FFFFFF; --color-mask-off: #000000;
   --color-scrim: rgba(74, 36, 51, 0.45); --color-shadow: rgba(74, 36, 51, 0.16);
 
+  /* movie: skies, people, road, terminal */
+  --sky-m1: #BFE3F2; --sky-m2: #FDE7EE; --sky-n1: #9FD3EE; --sky-n2: #EAF6FB;
+  --sky-s1: #F79A6E; --sky-s2: #F5B3C4; --sky-s3: #9C8FD0; --sky-t1: #1C1F45; --sky-t2: #5A2E5E;
+  --river-1: #8FCBDA; --river-2: #BFE1EA; --glow: #FFE7A3;
+  --color-face: #F6D5BF; --color-blush: #F4A3B5; --color-hair: #3A2230;
+  --color-coat-mina: #E97FA0; --color-coat-me: #3D4A7A; --color-navy: #3D4A7A;
+  --color-glass: #CDEBF5; --color-metal: #B9B3BF; --color-asphalt: #5B5560; --color-lane: #F7F1E8;
+  --color-sign: #1F7A5A; --color-sign-blue: #1F5E9E; --color-wood: #A86B45; --color-cream: #F8EBD3;
+  --color-mtn-far: #B9A7C9; --color-mtn-1: #C77B55; --color-mtn-2: #D89A4E; --color-mtn-3: #8E9D5B;
+  --color-term-bg: #241019; --color-term-win: #2E1622; --color-term-line: #4A2A3A; --color-term-fg: #F9DCE6; --color-term-dim: #B98AA0;
+  --color-sub-bg: rgba(36, 16, 25, 0.78); --color-beam: rgba(255, 231, 163, 0.35); --color-window-lit: #FFD27A;
+
   --font-display: "Bagel Fat One", "Gowun Dodum", system-ui, sans-serif;
   --font-body: "Gowun Dodum", ui-sans-serif, system-ui, sans-serif;
   --font-outlier: "Gaegu", "Gowun Dodum", cursive;

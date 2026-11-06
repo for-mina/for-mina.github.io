@@ -1,0 +1,55 @@
+/* Lunch and Cafe Daenerys scenes: extra colours as tokens, used only through the classes below. */
+:root {
+  --cafe-ivy-red: #B8432A; --cafe-ivy-orange: #D97A2B; --cafe-ivy-rust: #8A3F1C; --cafe-ivy-green: #6E8C3A;
+  --cafe-brick: #7A3F2E; --cafe-brick-2: #9C4A32; --cafe-mortar: #B06A52; --cafe-vine: #4A2A1E;
+  --cafe-navy: #1C2430; --cafe-gold: #C9A24A; --cafe-gold-2: #E8C46A; --cafe-lamp: #EDE8DD;
+  --cafe-stone: #6B6B6B; --cafe-stone-2: #585858; --cafe-conifer: #2F5D3A; --cafe-conifer-2: #3F7A48;
+  --cafe-iron: #2B2B2B; --cafe-wood: #6E4A2F; --cafe-warm-white: #F3EBDD; --cafe-glass-warm: #F7C9A2;
+  --cafe-water: #7E95A3; --cafe-water-2: #5E7A8C; --cafe-hill-1: #8C8AA6; --cafe-hill-2: #9B7A52; --cafe-hill-3: #6C6A4E;
+  --cafe-sky-1: #7B6DB5; --cafe-sky-2: #B98AB6; --cafe-sky-3: #F5A0A0; --cafe-sky-4: #F8B66E; --cafe-sky-5: #FFD98A;
+  --cafe-sun: #FFE7A3; --cafe-mum: #F2C100; --cafe-road: #5B5560;
+  --drink-matcha: #8DB95F; --drink-matcha-2: #6F9E46; --drink-milktea: #D9B78C; --drink-chestnut: #8B5A3A; --drink-chestnut-2: #5A3A22;
+  --drink-coffee: #3A2217; --drink-foam: #F6EFE0; --drink-sleeve: #C8A07A;
+  --food-pot: #3A3A3E; --food-pot-2: #55555B; --food-broth: #B5582A; --food-beef: #7A4229; --food-onion: #F2E6C8;
+  --food-rice: #FFF8EE; --food-fried: #D9A24A; --food-fried-2: #B9822E; --food-egg: #FFF8F0; --food-yolk: #F6B02A;
+  --food-noodle: #E8C86E; --food-greens: #5E9A4A; --food-chili: #D63A2A; --food-plate: #F7F2EA; --food-plate-2: #E6DED2;
+  --food-crust: #E2B363; --food-crust-2: #C98B3B; --food-tomato: #C8382E; --food-cheese: #F7D45B; --food-cheese-2: #E9B93A; --food-basil: #4F7A3A;
+  --food-oven: #4A342B; --food-oven-2: #2E201B; --food-oven-mouth: #1A100C; --food-fire: #FF8A3A; --food-fire-2: #FFD24A; --food-ember: #B23A1E;
+  --food-table: #8A5A3A; --food-table-2: #B07B4E; --food-wall: #F6E9D4; --food-wall-2: #E9D7BB; --food-steam: #FFFFFF;
+  --flap-bg: #16161B; --flap-face: #26262E; --flap-text: #F3EBDD; --flap-amber: #F2B93B; --flap-green: #8FD18B; --flap-red: #F26B5B;
+  --metal-spoon: #C9CCD4;
+}
+.cf-ivy-red { fill: var(--cafe-ivy-red); } .cf-ivy-orange { fill: var(--cafe-ivy-orange); } .cf-ivy-rust { fill: var(--cafe-ivy-rust); } .cf-ivy-green { fill: var(--cafe-ivy-green); }
+.cf-brick { fill: var(--cafe-brick); } .cf-brick2 { fill: var(--cafe-brick-2); } .cs-mortar { fill: none; stroke: var(--cafe-mortar); stroke-width: 1; }
+.cs-vine { fill: none; stroke: var(--cafe-vine); stroke-width: 1.6; stroke-linecap: round; }
+.cf-navy { fill: var(--cafe-navy); } .cf-gold { fill: var(--cafe-gold); } .cf-gold2 { fill: var(--cafe-gold-2); } .cs-gold { fill: none; stroke: var(--cafe-gold); stroke-width: 1.5; }
+.cf-lamp { fill: var(--cafe-lamp); } .cs-lamp { fill: none; stroke: var(--cafe-lamp); stroke-width: 2; stroke-linecap: round; }
+.cf-stone { fill: var(--cafe-stone); } .cf-stone2 { fill: var(--cafe-stone-2); } .cf-conifer { fill: var(--cafe-conifer); } .cf-conifer2 { fill: var(--cafe-conifer-2); }
+.cf-iron { fill: var(--cafe-iron); } .cs-iron { fill: none; stroke: var(--cafe-iron); stroke-width: 2.4; stroke-linecap: round; } .cs-iron-thin { fill: none; stroke: var(--cafe-iron); stroke-width: 1.4; }
+.cf-wood { fill: var(--cafe-wood); } .cf-warm { fill: var(--cafe-warm-white); } .cf-glass-warm { fill: var(--cafe-glass-warm); }
+.cf-water { fill: var(--cafe-water); } .cf-water2 { fill: var(--cafe-water-2); } .cf-hill1 { fill: var(--cafe-hill-1); } .cf-hill2 { fill: var(--cafe-hill-2); } .cf-hill3 { fill: var(--cafe-hill-3); }
+.cf-sky1 { fill: var(--cafe-sky-1); } .cf-sky2 { fill: var(--cafe-sky-2); } .cf-sky3 { fill: var(--cafe-sky-3); } .cf-sky4 { fill: var(--cafe-sky-4); } .cf-sky5 { fill: var(--cafe-sky-5); }
+.cf-sun { fill: var(--cafe-sun); } .cf-mum { fill: var(--cafe-mum); } .cf-road { fill: var(--cafe-road); }
+.cs-sunline { fill: none; stroke: var(--cafe-sun); stroke-width: 2; stroke-linecap: round; }
+.cf-serif { font-family: Georgia, "Times New Roman", serif; fill: var(--cafe-gold); letter-spacing: 0.12em; }
+.cf-matcha { fill: var(--drink-matcha); } .cf-matcha2 { fill: var(--drink-matcha-2); } .cf-milktea { fill: var(--drink-milktea); } .cf-chestnut { fill: var(--drink-chestnut); } .cf-chestnut2 { fill: var(--drink-chestnut-2); }
+.cf-coffee { fill: var(--drink-coffee); } .cf-foam { fill: var(--drink-foam); } .cf-sleeve { fill: var(--drink-sleeve); }
+.cs-foam { fill: none; stroke: var(--drink-foam); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.cs-tea { fill: none; stroke: var(--drink-milktea); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.cs-arch { fill: none; stroke: var(--cafe-iron); stroke-width: 5; stroke-linejoin: round; }
+.cs-ripple { fill: none; stroke: var(--cafe-sun); stroke-width: 2; stroke-linecap: round; opacity: 0.55; }
+.cf-pot { fill: var(--food-pot); } .cf-pot2 { fill: var(--food-pot-2); } .cf-broth { fill: var(--food-broth); } .cf-beef { fill: var(--food-beef); } .cf-onion { fill: var(--food-onion); }
+.cf-rice { fill: var(--food-rice); } .cf-fried { fill: var(--food-fried); } .cf-fried2 { fill: var(--food-fried-2); } .cf-egg { fill: var(--food-egg); } .cf-yolk { fill: var(--food-yolk); }
+.cs-noodle { fill: none; stroke: var(--food-noodle); stroke-width: 2.4; stroke-linecap: round; } .cf-noodle { fill: var(--food-noodle); }
+.cf-greens { fill: var(--food-greens); } .cf-chili { fill: var(--food-chili); } .cf-plate { fill: var(--food-plate); } .cf-plate2 { fill: var(--food-plate-2); }
+.cf-crust { fill: var(--food-crust); } .cf-crust2 { fill: var(--food-crust-2); } .cf-tomato { fill: var(--food-tomato); } .cf-cheese { fill: var(--food-cheese); } .cf-cheese2 { fill: var(--food-cheese-2); } .cf-basil { fill: var(--food-basil); }
+.cs-cheese { fill: none; stroke: var(--food-cheese); stroke-width: 3; stroke-linecap: round; }
+.cf-oven { fill: var(--food-oven); } .cf-oven2 { fill: var(--food-oven-2); } .cf-oven-mouth { fill: var(--food-oven-mouth); } .cf-fire { fill: var(--food-fire); } .cf-fire2 { fill: var(--food-fire-2); } .cf-ember { fill: var(--food-ember); }
+.cf-table { fill: var(--food-table); } .cf-table2 { fill: var(--food-table-2); } .cf-wall { fill: var(--food-wall); } .cf-wall2 { fill: var(--food-wall-2); }
+.cs-steam { fill: none; stroke: var(--food-steam); stroke-width: 2.4; stroke-linecap: round; opacity: 0.85; } .cf-steam { fill: var(--food-steam); }
+.cf-flap { fill: var(--flap-bg); } .cf-flap2 { fill: var(--flap-face); } .k-flap { font-family: var(--font-mrz); fill: var(--flap-text); }
+.k-flap-amber { font-family: var(--font-mrz); fill: var(--flap-amber); } .k-flap-green { font-family: var(--font-mrz); fill: var(--flap-green); } .k-flap-red { font-family: var(--font-mrz); fill: var(--flap-red); }
+.cf-spoon { fill: var(--metal-spoon); } .cs-spoon { fill: none; stroke: var(--metal-spoon); stroke-width: 3; stroke-linecap: round; }
+.cs-wood { fill: none; stroke: var(--cafe-wood); stroke-width: 3; stroke-linecap: round; }
+.cs-sniff { fill: none; stroke: var(--color-ink-2); stroke-width: 1.4; stroke-linecap: round; }
+.cs-smell { fill: none; stroke: var(--food-fried-2); stroke-width: 2.2; stroke-linecap: round; opacity: 0.5; }

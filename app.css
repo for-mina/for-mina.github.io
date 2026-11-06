@@ -4,8 +4,8 @@
 /* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V5 · weakest: E, many small scenes; each carries one question and one moving picture so no screen goes past ~80 words */
 /* waive 80: the user asked for a hand-drawn 2D island, an ostrich officer and pictures that draw themselves; the map is a diagram of the real island */
 /* waive 7b: --color-mask-on and --color-mask-off are SVG mask luminance (white shows, black hides), never a surface */
-@import url("./tokens.css");
-@import url("./base.css");
+@import url("./tokens.css?v=3");
+@import url("./base.css?v=3");
 
 html { background: var(--color-paper); color-scheme: light; }
 body { font-size: var(--text-md); }
@@ -225,17 +225,6 @@ dialog.spot .spot-note { padding-bottom: var(--space-md); }
 .bubble { position: fixed; z-index: var(--z-toast); left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom) + var(--space-md)); width: min(calc(100% - 2 * var(--space-md)), 24rem); margin: 0 auto; display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-md) var(--space-xs) var(--space-xs); border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-paper-2); box-shadow: 0 5px 0 var(--color-shadow); pointer-events: none; }
 .bubble svg { width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--color-paper-3); }
 .bubble p { font-family: var(--font-outlier); font-size: 1.3rem; line-height: 1.15; }
-
-/* ---------- flight (sending) ---------- */
-.flight { position: fixed; z-index: var(--z-modal); inset: 0; display: grid; place-items: center; background: var(--color-paper); }
-.flight[hidden] { display: none; }
-.flight-art { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.flight-box { position: relative; z-index: 2; display: grid; justify-items: center; gap: var(--space-md); margin-top: 38vh; margin-top: 38svh; padding-inline: var(--space-lg); text-align: center; }
-.flight-text { font-family: var(--font-outlier); font-size: 1.6rem; font-weight: 700; line-height: 1.15; color: var(--color-ink); }
-.flight-check { width: 64px; height: 64px; }
-.fc-ring { fill: var(--color-matcha); stroke: var(--color-matcha-deep); stroke-width: 3; }
-.fc-tick { fill: none; stroke: var(--color-paper-2); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
-.trail { fill: none; stroke: var(--color-accent); stroke-width: 2.5; stroke-dasharray: 2 9; stroke-linecap: round; }
 
 /* ---------- visa ---------- */
 .visa { position: relative; overflow: hidden; display: grid; gap: var(--space-md); padding: var(--space-lg); border-radius: var(--radius-card); background: var(--color-paper-2); box-shadow: 0 6px 0 var(--color-door-edge); }

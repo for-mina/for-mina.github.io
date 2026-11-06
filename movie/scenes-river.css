@@ -1,0 +1,51 @@
+/* River scenes (wharf, ferry, zip-wire, coin): extra paint for the real places.
+   Loaded by scenes-river.js. Colours eyeballed from visual_refs.md. */
+:root {
+  --rv-black: #1E1E1E;        /* geodesic dome, zip tower base */
+  --rv-black-2: #3A3A3A;      /* dome lattice lines */
+  --rv-red: #B5302A;          /* hanok immigration gate */
+  --rv-red-deep: #8C2420;
+  --rv-roof: #5B5B5B;         /* grey tiled roof */
+  --rv-roof-line: #7E7E7E;
+  --rv-banner: #2E6FB7;       /* Naminara banners */
+  --rv-navy: #1F3A6B;         /* ferry band and "NAMI" */
+  --rv-hull: #F2F2F0;
+  --rv-hull-shade: #D9D9D6;
+  --rv-tower: #E6E9EC;        /* zip tower lattice */
+  --rv-tower-line: #AEB5BC;
+  --rv-cable: #5E6368;
+  --rv-paving: #DED8D0;       /* plaza paving */
+  --rv-paving-2: #CBC4BB;
+  --rv-concrete: #C4C7C9;     /* wharf ramp */
+  --rv-water-deep: #6F8FA6;
+  --rv-flag-red: #D0352B;
+  --rv-flag-blue: #1F4FA8;
+  --rv-green: #3D8B4F;
+  --rv-orange: #F28C28;
+  --rv-led: #4FD1E8;
+  --rv-coin: #F2B93B;
+  --rv-coin-deep: #B7811A;
+  --rv-coin-edge: #D9A032;
+}
+.f-rv-black { fill: var(--rv-black); } .f-rv-black2 { fill: var(--rv-black-2); }
+.f-rv-red { fill: var(--rv-red); } .f-rv-red-deep { fill: var(--rv-red-deep); }
+.f-rv-roof { fill: var(--rv-roof); } .st-rv-roof { fill: none; stroke: var(--rv-roof-line); stroke-width: 1.2; }
+.f-rv-banner { fill: var(--rv-banner); }
+.f-rv-navy { fill: var(--rv-navy); } .f-rv-hull { fill: var(--rv-hull); } .f-rv-hull-shade { fill: var(--rv-hull-shade); }
+.f-rv-tower { fill: var(--rv-tower); } .st-rv-tower { fill: none; stroke: var(--rv-tower-line); stroke-width: 1.6; stroke-linecap: round; }
+.st-rv-tower-w { fill: none; stroke: var(--rv-tower); stroke-width: 3; stroke-linecap: round; }
+.st-rv-cable { fill: none; stroke: var(--rv-cable); stroke-width: 2; stroke-linecap: round; }
+.f-rv-paving { fill: var(--rv-paving); } .f-rv-paving2 { fill: var(--rv-paving-2); } .f-rv-concrete { fill: var(--rv-concrete); }
+.f-rv-water-deep { fill: var(--rv-water-deep); }
+.f-rv-fred { fill: var(--rv-flag-red); } .f-rv-fblue { fill: var(--rv-flag-blue); } .f-rv-green { fill: var(--rv-green); } .f-rv-orange { fill: var(--rv-orange); }
+.f-rv-led { fill: var(--rv-led); }
+.f-rv-coin { fill: var(--rv-coin); } .f-rv-coin-deep { fill: var(--rv-coin-deep); } .f-rv-coin-edge { fill: var(--rv-coin-edge); }
+.st-rv-coin { fill: none; stroke: var(--rv-coin-deep); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.st-rv-dome { fill: none; stroke: var(--rv-black-2); stroke-width: 1; }
+.st-rv-speed { fill: none; stroke: var(--color-paper-2); stroke-width: 2; stroke-linecap: round; opacity: 0.85; }
+.st-rv-ripple { fill: none; stroke: var(--color-paper-2); stroke-width: 1.6; stroke-linecap: round; opacity: 0.7; }
+.st-rv-scarf-mina { fill: none; stroke: var(--color-matcha); stroke-width: 3; stroke-linecap: round; }
+.st-rv-scarf-me { fill: none; stroke: var(--color-gold-soft); stroke-width: 3; stroke-linecap: round; }
+.st-rv-strap { fill: none; stroke: var(--rv-black-2); stroke-width: 1.6; stroke-linecap: round; }
+.k-rv-navy { font-family: var(--font-display); fill: var(--rv-navy); }
+.k-rv-white { font-family: var(--font-display); fill: var(--color-paper-2); }

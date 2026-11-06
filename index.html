@@ -19,7 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap">
-<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="app.css?v=3">
+<link rel="stylesheet" href="movie/movie.css?v=3">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -101,6 +102,7 @@
       </svg>
       <div class="cover-ostrich" data-ostrich="cover"><svg class="ostrich" viewBox="0 0 120 150"><use href="#s-ostrich"/></svg></div>
     </div>
+    <p class="boot" data-boot aria-hidden="true"></p>
     <h1 id="h-cover">Mina, you have official mail.</h1>
     <p class="lede">Sealed last year, delivered today by a very serious ostrich.</p>
     <button class="btn btn-wide" type="button" data-open>Open the envelope</button>
@@ -236,6 +238,7 @@
         </g>
         <text class="map-text" data-m="label" x="20" y="250" transform="rotate(-90 20 250)">North Han River</text>
       </svg>
+      <p class="gps" aria-hidden="true"><b>gps lock</b> 37.7906 N, 127.5254 E</p>
       <button class="sticker" type="button" data-spot="office" style="--x:34%;--y:18%;--r:-6deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ferry"/></svg></span><span class="sticker-label">Visa check</span></span></button>
       <button class="sticker" type="button" data-spot="zip" style="--x:80%;--y:7%;--r:5deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tower"/></svg></span><span class="sticker-label">Zip-wire</span></span></button>
       <button class="sticker" type="button" data-spot="pine" style="--x:60%;--y:31%;--r:4deg"><span class="sticker-in"><span class="sticker-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-pine"/></svg></span><span class="sticker-label">Pine lane</span></span></button>
@@ -398,7 +401,7 @@
   <section class="scene" data-scene="visa" aria-labelledby="h-visa">
     <header class="scene-head">
       <h2 id="h-visa">Your visa is ready.</h2>
-      <p class="lede" data-visa-lede>The consulate already has a copy. Take a screenshot for Sunday.</p>
+      <p class="lede">Take a screenshot of this page. It is your visa for Sunday.</p>
     </header>
     <article class="visa" data-visa aria-label="Mina’s Naminara visa">
       <div class="visa-top">
@@ -424,11 +427,8 @@
       <p class="countdown" data-countdown>See you on Sunday.</p>
       <p class="issued">Issued by the consulate. Finally.</p>
     </article>
-    <p class="delivered" data-delivered hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="f-matcha" cx="12" cy="12" r="11"/><path class="st-paper nf" stroke-width="3" d="M7 12.5 L10.5 16 L17 9"/></svg>Delivered to the consulate.</p>
-    <div class="fallback" data-fallback hidden>
-      <p class="small">The consulate’s mailbox didn’t answer. One tap sends it on Telegram instead.</p>
-      <a class="btn btn-wide" data-tg-fallback href="https://t.me/jcbkm" target="_blank" rel="noopener">Send on Telegram</a>
-    </div>
+    <p class="delivered" data-delivered><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="f-matcha" cx="12" cy="12" r="11"/><path class="st-paper nf" stroke-width="3" d="M7 12.5 L10.5 16 L17 9"/></svg><span data-delivered-text>The consulate has a copy.</span></p>
+    <button class="btn btn-wide" type="button" data-replay-movie>Watch our Sunday again</button>
     <button class="btn btn-quiet btn-wide" type="button" data-change>Change an answer</button>
     <details class="more">
       <summary>Our day, hour by hour</summary>
@@ -467,18 +467,38 @@
   </div>
 </div>
 
-<div class="flight" data-flight hidden>
-  <svg class="flight-art" data-flight-art viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs><mask id="mk-trail" maskUnits="userSpaceOnUse" x="-100" y="-200" width="600" height="1000"><path class="mask-line" data-trail-mask d="M180 560 C120 470 70 380 140 330 C220 275 270 370 205 395 C140 420 150 300 245 225 C300 180 330 90 440 -60"/></mask></defs>
-    <path class="trail" mask="url(#mk-trail)" d="M180 560 C120 470 70 380 140 330 C220 275 270 370 205 395 C140 420 150 300 245 225 C300 180 330 90 440 -60"/>
-    <path data-trail-path class="nf" d="M180 560 C120 470 70 380 140 330 C220 275 270 370 205 395 C140 420 150 300 245 225 C300 180 330 90 440 -60"/>
-    <g data-plane><path class="f-paper2 st-ink" d="M-18 -11 L20 0 L-18 11 L-9 0 Z"/><path class="st-ink nf" d="M-9 0 L20 0 M-9 0 L-13 9"/></g>
-  </svg>
-  <div class="flight-box" aria-live="polite">
-    <p class="flight-text" data-flight-text>Delivering your visa to the consulate…</p>
-    <svg class="flight-check" data-flight-check viewBox="0 0 64 64" aria-hidden="true"><circle class="fc-ring" cx="32" cy="32" r="28"/><path class="fc-tick" d="M19 33 L28 42 L46 23"/></svg>
+<div class="term" data-term role="dialog" aria-modal="true" aria-label="Issuing your visa" hidden>
+  <div class="term-win">
+    <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>consulate@naminara: ~</span></div>
+    <pre class="term-body" data-term-body aria-live="polite"></pre>
+    <div class="term-foot" data-term-foot hidden>
+      <button class="btn btn-wide" type="button" data-term-play>Play our Sunday</button>
+      <button class="text-btn" type="button" data-term-skip>Skip to my visa</button>
+    </div>
   </div>
 </div>
+
+<div class="movie" data-movie role="dialog" aria-modal="true" aria-label="Our Sunday, the movie" hidden>
+  <div class="movie-top"><span class="rec"><i></i>rec</span><span class="movie-chapter" data-chapter aria-live="polite">sunday_08_11.mp4</span><button class="text-btn" type="button" data-skip>Skip</button></div>
+  <div class="movie-stagewrap"><div class="movie-screen">
+    <svg class="movie-svg" data-stage viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+    <div class="movie-sub" data-sub aria-live="polite"><span></span></div>
+    <div class="movie-end" data-end hidden>
+      <p>That’s our Sunday.</p>
+      <button class="btn" type="button" data-to-visa>See my visa</button>
+      <button class="text-btn" type="button" data-replay>Watch again</button>
+    </div>
+  </div></div>
+  <div class="movie-bar">
+    <div class="movie-track" data-track aria-hidden="true"><i class="movie-fill" data-fill></i></div>
+    <div class="movie-controls">
+      <button class="icon-btn" type="button" data-play aria-label="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-fill i-pause" d="M7 5 H10 V19 H7 Z M14 5 H17 V19 H14 Z"/><path class="i-fill i-play-shape" d="M8 5 L19 12 L8 19 Z"/></svg></button>
+      <span data-time>00:00 / 00:00</span><span class="grow"></span>
+    </div>
+  </div>
+</div>
+
+<div class="devcon" data-devcon role="dialog" aria-label="Developer console" hidden><pre data-devcon-body></pre><button class="text-btn" type="button" data-devcon-close>Close console</button></div>
 
 <div class="bubble" data-bubble aria-live="polite" hidden><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ostrich"/></svg><p data-bubble-text></p></div>
 
@@ -496,6 +516,12 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomWiggle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomBounce.min.js"></script>
-<script src="app.js"></script>
+<script src="movie/kit.js?v=3"></script>
+<script src="movie/engine.js?v=3"></script>
+<script src="movie/scenes-road.js?v=3"></script>
+<script src="movie/scenes-river.js?v=3"></script>
+<script src="movie/scenes-island.js?v=3"></script>
+<script src="movie/scenes-cafe.js?v=3"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
