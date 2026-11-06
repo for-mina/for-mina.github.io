@@ -4,8 +4,8 @@
 /* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V5 · weakest: E, many small scenes; each carries one question and one moving picture so no screen goes past ~80 words */
 /* waive 80: the user asked for a hand-drawn 2D island, an ostrich officer and pictures that draw themselves; the map is a diagram of the real island */
 /* waive 7b: --color-mask-on and --color-mask-off are SVG mask luminance (white shows, black hides), never a surface */
-@import url("./tokens.css?v=3");
-@import url("./base.css?v=3");
+@import url("./tokens.css?v=4");
+@import url("./base.css?v=4");
 
 html { background: var(--color-paper); color-scheme: light; }
 body { font-size: var(--text-md); }

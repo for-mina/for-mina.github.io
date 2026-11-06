@@ -35,6 +35,7 @@
   --color-coat-mina: #E97FA0; --color-coat-me: #3D4A7A; --color-navy: #3D4A7A;
   --color-glass: #CDEBF5; --color-metal: #B9B3BF; --color-asphalt: #5B5560; --color-lane: #F7F1E8;
   --color-sign: #1F7A5A; --color-sign-blue: #1F5E9E; --color-wood: #A86B45; --color-cream: #F8EBD3;
+  --color-brick: #B4644B; --color-brick-dark: #8C4836;
   --color-mtn-far: #B9A7C9; --color-mtn-1: #C77B55; --color-mtn-2: #D89A4E; --color-mtn-3: #8E9D5B;
   --color-term-bg: #241019; --color-term-win: #2E1622; --color-term-line: #4A2A3A; --color-term-fg: #F9DCE6; --color-term-dim: #B98AA0;
   --color-sub-bg: rgba(36, 16, 25, 0.78); --color-beam: rgba(255, 231, 163, 0.35); --color-window-lit: #FFD27A;

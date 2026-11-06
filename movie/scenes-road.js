@@ -13,8 +13,9 @@
     const sun = ctx.add(K.sun(296, 196, 20));
     const clouds = ctx.add(`<g>${K.cloud(70, 120, 0.9)}${K.cloud(250, 76, 0.7)}${K.cloud(410, 150, 0.8)}</g>`);
     ctx.add(K.seoulSkyline(338));
-    const apt = ctx.add(K.apartment(200, 230, 132, 240, '101동'));
-    ctx.add(`<g>${K.tree('ginkgo', 172, 470, 48)}${K.tree('maple', 346, 470, 40)}${K.tree('ginkgo', 30, 470, 40)}</g>`);
+    ctx.add(K.pole(26, 470, 214));
+    const apt = ctx.add(K.villa(186, 232, 158, 238));
+    ctx.add(`<g>${K.tree('ginkgo', 158, 470, 46)}${K.tree('maple', 352, 470, 34)}</g>`);
     ctx.add('<rect class="f-paper3" y="470" width="360" height="30"/><rect class="f-asphalt" y="500" width="360" height="140"/><path class="st-lane" d="M0 572 H360"/>');
     const hud = ctx.add(K.hud(16, 34, 136, 62,
       `<text class="k-mono k-light" x="12" y="20" font-size="10">sun 08 nov, seoul</text>
@@ -22,8 +23,8 @@
        <text class="k-mono" data-b x="12" y="48" font-size="26" style="fill:var(--color-gold)" opacity="0">${st.pickup}</text>`));
     const car = ctx.add(`<g transform="translate(-150 552)">${K.car({ mina: true })}</g>`);
     const minaInCar = $(car, '.k-head[data-who="mina"]');
-    const mina = ctx.add(K.person('mina', { x: 266, y: 470, s: 0.92 }));
-    const door = $(apt, '.f-door');
+    const mina = ctx.add(K.person('mina', { x: 308, y: 470, s: 0.92 }));
+    const door = $(apt, '.k-villa-door');
     const honk = ctx.add(K.bubble(150, 420, 'Beep beep!', { w: 96, size: 15 }));
     const tl = gsap.timeline();
     gsap.set([mina, minaInCar], { opacity: 0 });
@@ -123,12 +124,12 @@
     let lights = '';
     for (let i = 0; i < 16; i += 1) lights += `<rect class="f-lit" x="${180 + (i % 8) * 10}" y="${348 + Math.floor(i / 8) * 16}" width="3" height="5" opacity="${0.5 + (i % 3) * 0.2}"/>`;
     ctx.add(`<g>${lights}</g>`);
-    const apt = ctx.add(K.apartment(200, 230, 132, 240, '101동'));
-    $$(apt, '.k-win').forEach((w, i) => { if ((i * 7) % 5 < 2) w.setAttribute('class', 'f-lit k-win'); });
-    const target = $$(apt, '.k-win').find((w) => w.dataset.r === '3' && w.dataset.c === '2');
-    if (target) target.setAttribute('class', 'f-glass k-win');
-    const glow = target ? ctx.add(`<rect class="f-lit" x="${target.getAttribute('x')}" y="${target.getAttribute('y')}" width="${target.getAttribute('width')}" height="12" rx="2" opacity="0"/>`) : null;
-    ctx.add(`<g>${K.tree('ginkgo', 172, 470, 48)}${K.tree('maple', 346, 470, 40)}</g>`);
+    ctx.add(K.pole(26, 470, 214));
+    const apt = ctx.add(K.villa(186, 232, 158, 238));
+    $$(apt, '.k-win').forEach((w) => { if (w.dataset.r === '0' || (w.dataset.r === '2' && w.dataset.c === '1')) w.setAttribute('class', 'f-lit st-face k-win'); });
+    const target = $$(apt, '.k-win').find((w) => w.dataset.r === '1' && w.dataset.c === '0');
+    const glow = target ? ctx.add(`<rect class="f-lit st-face" x="${target.getAttribute('x')}" y="${target.getAttribute('y')}" width="46" height="28" rx="2" opacity="0"/>`) : null;
+    ctx.add(`<g>${K.tree('ginkgo', 158, 470, 46)}${K.tree('maple', 352, 470, 34)}</g>`);
     ctx.add('<rect class="f-ink2" y="470" width="360" height="30" opacity="0.6"/><rect class="f-asphalt" y="500" width="360" height="140"/><path class="st-lane" d="M0 572 H360"/>');
     const hud = ctx.add(K.hud(16, 34, 150, 62,
       `<text class="k-mono k-light" x="12" y="20" font-size="10">${time ? 'home by' : 'home'}</text>
@@ -136,7 +137,7 @@
     const car = ctx.add(`<g transform="translate(520 552)"><path class="f-beam" d="M-62 -18 L-190 -46 L-190 12 Z"/>${K.car({ flip: true, mina: true })}</g>`);
     const minaInCar = $(car, '.k-head[data-who="mina"]');
     const mina = ctx.add(K.person('mina', { x: 214, y: 470, s: 0.92 }));
-    const door = $(apt, '.f-door');
+    const door = $(apt, '.k-villa-door');
     const tl = gsap.timeline();
     gsap.set(mina, { opacity: 0 });
     tl.to($$(stars, '.k-star'), { opacity: 0.35, duration: 0.6, ease: 'sine.inOut', stagger: { each: 0.08, from: 'random', repeat: 7, yoyo: true } }, 0)
@@ -147,7 +148,7 @@
       .to(mina, { opacity: 1, duration: 0.2 }, 1.75);
     K.wave(tl, mina, 1.95, { times: 2 });
     tl.to(door, { scaleX: 0.12, transformOrigin: '0% 50%', duration: 0.3 }, 2.6)
-      .to(mina, { x: 266, duration: 0.8, ease: 'none' }, 2.75);
+      .to(mina, { x: 308, duration: 0.8, ease: 'none' }, 2.75);
     K.walk(tl, mina, 2.75, 0.8);
     tl.to(mina, { opacity: 0, duration: 0.2 }, 3.5)
       .to(door, { scaleX: 1, duration: 0.3 }, 3.6);
@@ -157,7 +158,7 @@
     tl.to({}, { duration: 0.2 }, 5.8);
 
     ctx.say(time ? `Home by ${time}. Safe and sound.` : 'Home, no rush. Safe and sound.', 0.3, 2.6);
-    ctx.say('A window on the fourth floor lights up. Mission complete.', 3.3, 2.6);
+    ctx.say('A window upstairs lights up. Mission complete.', 3.3, 2.6);
     return tl;
   });
 

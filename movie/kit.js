@@ -177,6 +177,49 @@
       ${win}
       <rect class="f-door st-out" x="${x + w / 2 - 12}" y="${y + h - 30}" width="24" height="30" rx="3"/></g>`;
   };
+  // Korean villa (빌라): three brick floors over open piloti parking, a name band on the roof,
+  // a rooftop water tank, yellow gas pipes and outdoor AC units. x, y = top-left; ground = y + h.
+  // Parts: .k-villa-door (entrance, animate scaleX), .k-win[data-r][data-c] (r 0 = top floor).
+  KIT.villa = (x, y, w = 156, h = 238, name = '행복빌라') => {
+    const top = y + 22, fh = 52, ground = y + h, pil = top + fh * 3;
+    let mortar = '', win = '', rails = '', ac = '', gas = `M${x + 6} ${top + 6} V${ground - 4}`;
+    for (let yy = top + 8; yy < pil; yy += 8) mortar += `M${x + 2} ${yy} H${x + w - 2} `;
+    for (let r = 0; r < 3; r += 1) {
+      const fy = top + r * fh;
+      [x + 14, x + w - 60].forEach((wx, c) => {
+        win += `<rect class="f-glass st-face k-win" data-r="${r}" data-c="${c}" x="${wx}" y="${fy + 11}" width="46" height="28" rx="2"/><path class="st-thin" d="M${wx + 23} ${fy + 11} V${fy + 39}"/>`;
+      });
+      rails += `M${x + w - 64} ${fy + 42} H${x + w - 10} ` + [0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => `M${x + w - 62 + i * 6} ${fy + 42} V${fy + 49}`).join(' ') + ' ';
+      ac += `<g><rect class="f-paper2 st-face" x="${x + w / 2 - 12}" y="${fy + 30}" width="20" height="14" rx="2"/><circle class="st-thin nf" cx="${x + w / 2 - 2}" cy="${fy + 37}" r="4"/></g>`;
+      gas += ` M${x + 6} ${fy + 26} H${x + 13}`;
+    }
+    return `<g class="k-villa">
+      <rect class="f-metal" x="${x + w - 40}" y="${y - 7}" width="28" height="7"/>
+      <rect class="f-river-deep st-out" x="${x + w - 45}" y="${y - 33}" width="38" height="27" rx="7"/>
+      <path class="st-thin" d="M${x + w - 45} ${y - 24} H${x + w - 7} M${x + w - 45} ${y - 15} H${x + w - 7}"/>
+      <path class="f-paper2 st-face" d="M${x + 16} ${y - 2} A10 10 0 0 1 ${x + 34} ${y - 12} Z"/>
+      <rect class="f-brick-dark st-out" x="${x - 3}" y="${y}" width="${w + 6}" height="22" rx="2"/>
+      <text class="k-villa-name" x="${x + w / 2}" y="${y + 16}" font-size="13" text-anchor="middle">${name}</text>
+      <rect class="f-brick st-out" x="${x}" y="${top}" width="${w}" height="${fh * 3}"/>
+      <path class="st-mortar" d="${mortar}"/>
+      <rect class="f-cream" x="${x}" y="${top + fh - 2}" width="${w}" height="4"/><rect class="f-cream" x="${x}" y="${top + fh * 2 - 2}" width="${w}" height="4"/>
+      ${win}<path class="st-thin" d="${rails}"/>${ac}
+      <rect class="f-shadow" x="${x}" y="${pil}" width="${w}" height="${ground - pil}"/>
+      <g><rect class="f-metal" x="${x + 16}" y="${ground - 21}" width="52" height="14" rx="6"/><rect class="f-metal" x="${x + 27}" y="${ground - 31}" width="28" height="13" rx="5"/><circle class="f-ink" cx="${x + 28}" cy="${ground - 6}" r="5"/><circle class="f-ink" cx="${x + 57}" cy="${ground - 6}" r="5"/></g>
+      <rect class="f-glass st-out k-villa-door" x="${x + w - 50}" y="${pil + 14}" width="28" height="${ground - pil - 14}" rx="2"/>
+      <path class="st-thin" d="M${x + w - 36} ${pil + 14} V${ground}"/><rect class="f-ink2" x="${x + w - 18}" y="${pil + 32}" width="5" height="7" rx="1"/>
+      <circle class="f-lit" cx="${x + w - 36}" cy="${pil + 9}" r="3"/>
+      <rect class="f-cream st-out" x="${x - 3}" y="${pil}" width="${w + 6}" height="6"/>
+      <rect class="f-cream st-out" x="${x}" y="${pil + 6}" width="10" height="${ground - pil - 6}"/><rect class="f-cream st-out" x="${x + w / 2 - 5}" y="${pil + 6}" width="10" height="${ground - pil - 6}"/><rect class="f-cream st-out" x="${x + w - 10}" y="${pil + 6}" width="10" height="${ground - pil - 6}"/>
+      <path class="st-gas" d="${gas}"/>
+    </g>`;
+  };
+  // Concrete utility pole with sagging wires (Korean residential alley).
+  KIT.pole = (x, groundY, h = 210) => `<g class="k-pole">
+    <path class="st-ink nf" stroke-width="1.2" d="M${x - 14} ${groundY - h + 16} Q${x - 70} ${groundY - h + 40} -10 ${groundY - h + 30} M${x + 14} ${groundY - h + 16} Q${x + 120} ${groundY - h + 46} 380 ${groundY - h + 24} M${x + 14} ${groundY - h + 22} Q${x + 110} ${groundY - h + 58} 380 ${groundY - h + 44}"/>
+    <rect class="f-metal st-face" x="${x - 3.5}" y="${groundY - h}" width="7" height="${h}"/>
+    <rect class="f-ink2" x="${x - 16}" y="${groundY - h + 14}" width="32" height="4" rx="1"/>
+    <rect class="f-metal st-face" x="${x + 4}" y="${groundY - h + 30}" width="13" height="20" rx="3"/></g>`;
   KIT.seoulSkyline = (y = 330) => `<g class="k-skyline">
     <path class="f-mtn-far" d="M0 ${y + 40} Q40 ${y - 10} 90 ${y + 10} Q120 ${y + 20} 150 ${y + 40} L150 ${y + 80} L0 ${y + 80} Z"/>
     <g transform="translate(78 ${y - 6})"><rect class="f-mtn-far" x="-2.5" y="-70" width="5" height="70"/><rect class="f-mtn-far" x="-8" y="-58" width="16" height="9" rx="3"/><rect class="f-mtn-far" x="-1" y="-92" width="2" height="24"/></g>
